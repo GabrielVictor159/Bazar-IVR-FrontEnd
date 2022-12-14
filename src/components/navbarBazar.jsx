@@ -13,27 +13,27 @@ const NavbarBazar = (props) =>{
       <nav style={{ width: '100%', height: '5%', backgroundColor: '#575757', position: 'absolute', top: 0, left: 0, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', overflow: 'visible' }}>
         <a style={{
           flexDirection: 'row', display: 'flex', alignItems: 'center', left: -30,
-          position: 'relative'
+          position: 'relative', textDecoration:'none'
         }}
           href={'/Login'}
         >
           <img
             src={user}
             alt=''
-            width={15}
-            height={15}
+            width={20}
+            height={20}
           />
 
-          <h1>
+          <h1 >
             Login
           </h1>
         </a>
-        <a style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
+        <a style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' , textDecoration:'none'}}>
           <img
             src={padlock}
             alt=''
-            width={15}
-            height={15}
+            width={20}
+            height={20}
           />
 
           <h1>
@@ -63,7 +63,7 @@ const NavbarBazar = (props) =>{
             <h2>
               Bazar
             </h2>
-            <h1 style={{top:-20, position:'relative'}}>
+            <h1 style={{ position:'relative'}}>
               IVR
             </h1>
           </div>
@@ -80,24 +80,24 @@ const NavbarBazar = (props) =>{
     </nav>
     <nav className='nav3'>
         <div style={{flexDirection:'row', display:'flex', fontSize:props.width>1000 ? 15 :10}}>
-        <a className={props.active==='Home'?'active':'inactive'} href={'/Home'}>
-          <h3>
+        <a className={props.active==='Home'?'active':'inactive'} style={{textAlign:'center'}} href={'/Home'}>
+          <h3 style={{fontSize:'1.2rem'}}>
           Home
           </h3>
         </a>
         <p></p>
-        <a className={props.active==='Sobre'?'active':'inactive'} href={'/Sobre'}>
-          <h3>
+        <a className={props.active==='Sobre'?'active':'inactive'} style={{textAlign:'center'}} href={'/Sobre'}>
+          <h3 style={{fontSize:'1.2rem'}}>
           Sobre Nós
           </h3>
-        </a>
-        <a className={props.active==='Quero'?'active':'inactive'} href={'/Quero'}>
-          <h3>
+        </a >
+        <a className={props.active==='Quero'?'active':'inactive'} style={{textAlign:'center'}} href={'/Quero'}>
+          <h3 style={{fontSize:'1.2rem'}}>
           Quero Fazer Parte
           </h3>
         </a>
-        <a className={props.active==='Ajuda'?'active':'inactive'} href={'/Ajuda'}> 
-          <h3>
+        <a className={props.active==='Ajuda'?'active':'inactive'} style={{textAlign:'center'}} href={'/Ajuda'}> 
+          <h3 style={{fontSize:'1.2rem'}}>
           Ajuda
           </h3>
         </a>

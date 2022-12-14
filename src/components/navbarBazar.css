@@ -3,59 +3,59 @@ body {
 }
 
 nav h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    color: white;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    color: white !important;
 }
 nav h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5em;
-    color: #00AECD;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1.5em !important;
+    color: #00AECD !important;
 }
 
 nav img {
-    left: -10px;
-    position: relative;
+    left: -10px !important;
+    position: relative !important;
 }
 
 .nav2 {
-    width: 100%;
-    height: 10%;
-    background-color: #424242;
-    position: absolute;
-    top:5%;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    overflow:hidden
+    width: 100% !important;
+    height: 10% !important;
+    background-color: #424242 !important;
+    position: absolute !important;
+    top:5% !important;
+    left: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    overflow:hidden !important;
 }
 .nav3 {
-    width: 100%;
-    height: 7%;
-    background-color: #D9D9D9;
-    position: absolute;
-    top: 15%;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    width: 100% !important;
+    height: 7% !important;
+    background-color: #D9D9D9 !important;
+    position: absolute !important;
+    top: 15% !important;
+    left: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
     overflow: visible
 }
 .nav3 a{
-    height:100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-Left:10px;
-     padding-Right:10px;
-    text-decoration: none;
-    color: black;
+    height:100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    padding-Left:10px !important;
+     padding-Right:10px !important;
+    text-decoration: none !important;
+    color: black !important;
 }
 .nav3 .active{
-    background-color: #00AECD;
-    color: white;
+    background-color: #00AECD !important;
+    color: white !important;
 }
 

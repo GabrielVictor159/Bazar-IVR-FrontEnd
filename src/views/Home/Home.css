@@ -1,0 +1,36 @@
+
+    
+.slideContainer{
+    width: 100%;
+    
+    position: absolute;
+    top: 22%;
+    left: 0;
+    overflow: visible;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgb(49, 49, 49);
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+}
+.wrapper div{
+    width: 100%;
+
+}
+.img1{
+    
+    background-image: url('../../assets/slide-01.png');
+}
+.img2{
+
+    background-image: url('../../assets/slide-02.png');
+}
+.img3{
+
+    background-image: url('../../assets/slide-03.png');
+}
+
+
+
+
