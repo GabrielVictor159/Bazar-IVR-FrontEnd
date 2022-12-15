@@ -1,8 +1,6 @@
-
-    
-.slideContainer{
+.slideContainer {
     width: 100%;
-    
+
     position: absolute;
     top: 22%;
     left: 0;
@@ -10,27 +8,87 @@
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgb(49, 49, 49);
 }
-.wrapper{
+
+.wrapper {
     width: 100%;
     display: flex;
 }
-.wrapper div{
+
+.wrapper div {
     width: 100%;
 
 }
-.img1{
-    
+
+.img1 {
+
     background-image: url('../../assets/slide-01.png');
 }
-.img2{
+
+.img2 {
 
     background-image: url('../../assets/slide-02.png');
 }
-.img3{
+
+.img3 {
 
     background-image: url('../../assets/slide-03.png');
 }
 
+.TituloProdutos {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
+}
+.TituloProdutos h1{
+    color: #68EBE8;
+   
+}
+.TituloProdutos div{
+    width: 180px;
+    border-bottom: 5px solid #68EBE8; 
+}
+.containerProdutos{
+    width: 100%;
+    display: grid;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: 100px;
+    gap: 40px;
+    overflow: scroll;
+    
+}
+.produtoItem{
+    margin: auto;
+    width: 400px;
+    height: 350px;
+    
+    background-color: red;
+   
+}
 
-
+@media only screen and (min-width: 1200px ){
+    .containerProdutos{
+    grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (min-width: 800px ) and (max-width:1100px) {
+    .containerProdutos{
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 500px ) {
+    .produtoItem{
+        width: 300px;
+        height: 250px;
+        
+        background-color: red;
+       
+    }
+}

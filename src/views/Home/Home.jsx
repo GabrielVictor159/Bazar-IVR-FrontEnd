@@ -12,37 +12,76 @@ export default function Home(props) {
   useState
   return (
     <>
-   <div style={{position:'absolute', top: windowSize.current[1]*0.22, width:'100%'}}>
-   <Carousel>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={slide1}
-          alt="First slide"
-        />
-       
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={slide2}
-          alt="Second slide"
-        />
+      <NavbarBazar active={'Home'} width={windowSize.current[0]} height={windowSize.current[1]}/>
+      <div style={{ top: windowSize.current[1] * 0.22, width: '100%' }}>
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={slide1}
+              alt="First slide"
+            />
 
-        
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={slide3}
-          alt="Third slide"
-        />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={slide2}
+              alt="Second slide"
+            />
 
-        
-      </Carousel.Item>
-    </Carousel>
-    </div>
-    <NavbarBazar active={'Home'} width={windowSize.current[0]}/>
+
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={slide3}
+              alt="Third slide"
+            />
+
+
+          </Carousel.Item>
+        </Carousel>
+      </div>
+      <br />
+      <div className='TituloProdutos' >
+        <div>
+          <h1>Produtos</h1>
+        </div>
+      </div>
+      <div className='containerProdutos'>
+        <div className='produtoItem'>
+
+        </div>
+        <div className='produtoItem'>
+
+        </div>
+        <div className='produtoItem'>
+
+        </div>
+        <div className='produtoItem'>
+
+        </div>
+        <div className='produtoItem'>
+
+        </div>
+        <div className='produtoItem'>
+
+        </div>
+        <div className='produtoItem'>
+
+        </div>
+        <div className='produtoItem'>
+
+        </div>
+        <div className='produtoItem'>
+
+        </div>
+      </div>
+
+
+
+
     </>
 
 

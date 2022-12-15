@@ -10,7 +10,7 @@ const NavbarBazar = (props) =>{
   return (
     <>
     
-      <nav style={{ width: '100%', height: '5%', backgroundColor: '#575757', position: 'absolute', top: 0, left: 0, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', overflow: 'visible' }}>
+      <nav style={{ width: '100%', height: '5%', backgroundColor: '#575757', position: 'relative', top: 0, left: 0, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', overflow: 'visible' }}>
         <a style={{
           flexDirection: 'row', display: 'flex', alignItems: 'center', left: -30,
           position: 'relative', textDecoration:'none'
@@ -79,7 +79,7 @@ const NavbarBazar = (props) =>{
         </a>
     </nav>
     <nav className='nav3'>
-        <div style={{flexDirection:'row', display:'flex', fontSize:props.width>1000 ? 15 :10}}>
+        <div style={{flexDirection:'row', display:'flex', fontSize:props.width>1000 ? 15 :10, height:props.height*0.08}}>
         <a className={props.active==='Home'?'active':'inactive'} style={{textAlign:'center'}} href={'/Home'}>
           <h3 style={{fontSize:'1.2rem'}}>
           Home
