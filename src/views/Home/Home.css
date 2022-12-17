@@ -50,8 +50,11 @@
 .TituloProdutos div{
     width: 180px;
     border-bottom: 5px solid #68EBE8; 
+    position: relative;
+    top: 20px;
 }
 .containerProdutos{
+    padding-bottom: 40px;
     width: 100%;
     display: grid;
     flex-direction: row;
@@ -61,18 +64,66 @@
     position: relative;
     top: 100px;
     gap: 40px;
-    overflow: scroll;
+    overflow:hidden;
     
 }
 .produtoItem{
     margin: auto;
     width: 400px;
     height: 350px;
-    
-    background-color: red;
-   
+    overflow:hidden;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    position: relative;
+    top: 20px;
+    box-shadow: 8px 8px 2px rgb(150, 150, 150);
+    transition: all 0.5s;
 }
-
+.produtoItem:hover{
+    top: 5px;
+    box-shadow: 12px 12px 4px rgb(150, 150, 150);
+}
+.containerNavegation{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerNavegationOptions{
+    width: 350px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.NavegationContainer{
+    width: 120px;
+    height: 40px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 5px 5px 2px rgb(133, 133, 133);
+    top: 0px;
+    transition: all 0.5s;
+}
+.NavegationContainer:hover{
+    top: -10px;
+    box-shadow: 10px 10px 2px rgb(133, 133, 133);
+}
+footer{
+    position: relative;
+    top: 250px;
+    height: 200px;
+    background-color: #434343;
+}
 @media only screen and (min-width: 1200px ){
     .containerProdutos{
     grid-template-columns: repeat(3, 1fr);
@@ -88,7 +139,7 @@
         width: 300px;
         height: 250px;
         
-        background-color: red;
+
        
     }
 }

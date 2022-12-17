@@ -1,0 +1,17 @@
+.ContainerProduto{
+    width:100% ;
+    height:100%;
+}
+.ContainerImage{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    background-color: #E0EFF4;
+    border-bottom: 2px solid black;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+

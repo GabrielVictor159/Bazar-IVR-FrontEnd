@@ -6,10 +6,10 @@ import Login from './views/Login/Login';
 import Sobre from './views/Sobre/Sobre';
 function App() {
  
-
+const [product, setProduct] = useState()
   return (
     <Routes>
-    <Route path="/" element={<Home/>} />
+    <Route path="/" element={<Home setProduct={setProduct}/>} />
     <Route path='/Login' element={<Login />}/>
     <Route path='/Sobre' element={<Sobre />}/>
   </Routes>
