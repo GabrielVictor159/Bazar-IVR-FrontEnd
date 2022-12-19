@@ -20,7 +20,7 @@ export default function Home(props) {
     fetch(`http://localhost:3030/Produtos/FindAllLazyLoading/${index}/${size}`)
     .then((response) => response.json())
     .then((data) => setProdutos(data))
-
+    
   },[])
 
 
@@ -42,12 +42,15 @@ export default function Home(props) {
     .then((response) => response.json())
     .then((data) => setProdutos(data))
   }
+  function setProduct(callback){
+    window.location=`http://127.0.0.1:5173/Produto/${callback}`
+  }
   const mapProdutos = (callback)=>{
  
     try {
     return callback.map((value, index) => {
         return (
-          <div key={index} className='produtoItem'>
+          <div key={index} className='produtoItem' onClick={()=>setProduct(value.idProduto)}>
             <Produtos image={value.LinkImage} titulo={value.Nome} valor={value.Valor} />
           </div>
         )

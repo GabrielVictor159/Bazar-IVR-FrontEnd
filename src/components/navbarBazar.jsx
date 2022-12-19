@@ -80,7 +80,7 @@ const NavbarBazar = (props) =>{
     </nav>
     <nav className='nav3'>
         <div style={{flexDirection:'row', display:'flex', fontSize:props.width>1000 ? 15 :10, height:props.height*0.08}}>
-        <a className={props.active==='Home'?'active':'inactive'} style={{textAlign:'center'}} href={'/Home'}>
+        <a className={props.active==='Home'?'active':'inactive'} style={{textAlign:'center'}} href={'/'}>
           <h3 style={{fontSize:'1.2rem'}}>
           Home
           </h3>

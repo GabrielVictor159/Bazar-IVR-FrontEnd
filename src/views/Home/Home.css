@@ -66,6 +66,7 @@
     gap: 40px;
     overflow:hidden;
     
+    
 }
 .produtoItem{
     margin: auto;
@@ -78,6 +79,7 @@
     top: 20px;
     box-shadow: 8px 8px 2px rgb(150, 150, 150);
     transition: all 0.5s;
+    cursor: pointer;
 }
 .produtoItem:hover{
     top: 5px;
