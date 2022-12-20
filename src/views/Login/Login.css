@@ -1,0 +1,141 @@
+.LoginContainer {
+    width: 518px;
+    height: 678px;
+    background-color: white;
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ContainerBody {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.TituloLogin {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    position: relative;
+    top: 12%;
+}
+
+.InputsLogin {
+    width: 80%;
+    height: 60px;
+    background-color: #D9D9D9;
+    position: relative;
+    top: 30%;
+    padding-left: 15%;
+    cursor: help;
+    border: none;
+}
+
+.InputsLogin[type='email'] {
+    background-image: url('../../assets/mail.png');
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.InputsLogin[type='password'] {
+    background-image: url('../../assets/padlock2.png');
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.InputsLogin::placeholder {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+
+}
+
+.EsqueciSenhaContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    top: 32%;
+}
+
+.EsqueciSenha {
+    text-decoration: none;
+    color: #54D7F4;
+    font-size: 20px;
+}
+
+.LembrarContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    top: 35%;
+}
+
+.LembrarInput {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: solid #6AF3FB;
+    border-radius: 0px;
+    background-color: transparent;
+    transition: all 0.5s;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.animationCheckbox {
+    border-radius: 100px;
+    background-color: #6AF3FB;
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 255, 255, 0.9);
+    -moz-box-shadow: 0px 0px 21px 0px rgba(0, 255, 255, 0.9);
+    box-shadow: 0px 0px 21px 0px rgba(0, 255, 255, 0.9);
+
+}
+
+.animationCheckboxReverse {
+    border-radius: 0px;
+    background-color: transparent;
+}
+.LembreText{
+    position: relative;
+    left: 10px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ButtonLogar{
+    width: 80%;
+    height: 60px;
+    background-color: #6AF3FB;
+    position: relative;
+    top: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s;
+}
+.ButtonLogar:hover{
+    background-color: #3ea6ac;
+}
+.LoginText{
+    font-size:30px;
+}
+.RegistreSeText{
+    text-decoration: none;
+    position: relative;
+    top: 35%;
+    font-size: 20px;
+    color: #54D7F4;
+    cursor: pointer;
+}
