@@ -49,7 +49,7 @@ export default function Produto(props){
           <div className="BoxDescricao">
             <div className="BoxTituloDescricao">
             <img className="bookImage" src={Book}/>
-            <h6 className="TituloDescricao">Descrição do Produto</h6>
+            <h6 className="TituloDescricao">{'Descrição do Produto'}</h6>
             </div>
             <div  className="BoxTextDescricao">
             <p>{`   ${produto.Descricao}`}</p>
