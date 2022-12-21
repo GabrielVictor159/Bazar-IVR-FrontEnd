@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import './Login.css'
 export default function Login(props) {
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [Email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [Lembrar, setLembrar] = useState(false);
-    useState(() => {
+    useEffect(() => {
         document.body.style.background = 'linear-gradient(90deg, #0071DA 0%, #73FDFD 100%)'
     }, [])
     const logar =async()=>{

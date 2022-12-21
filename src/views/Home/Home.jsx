@@ -8,6 +8,7 @@ import slide2 from '../../assets/slide-02.png'
 import slide3 from '../../assets/slide-03.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Produtos from '../../components/Produtos';
+import getUser from '../../components/getUser';
 export default function Home(props) {
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   let [listProdutos, setListProdutos] = useState();
@@ -15,11 +16,11 @@ export default function Home(props) {
   const [index, setIndex] = useState(0);
   const [page, setPage] = useState(1);
   const [size, setSize] = useState(9);
-  
   useEffect(() => {
     fetch(`http://localhost:3030/Produtos/FindAllLazyLoading/${index}/${size}`)
     .then((response) => response.json())
     .then((data) => setProdutos(data))
+  
   },[])
 
 

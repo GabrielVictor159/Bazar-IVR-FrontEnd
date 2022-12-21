@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import "./navbarBazar.css"
 import user from '../assets/user.png';
@@ -6,7 +6,12 @@ import padlock from '../assets/padlock.png'
 import smartphone from '../assets/smartphone.png'
 import bag from '../assets/bag.png'
 import basket from '../assets/basket.png'
+import getUser from './getUser';
 const NavbarBazar = (props) =>{
+  const usuario = getUser()
+  useEffect(()=>{
+    console.log(usuario)
+  },[])
   return (
     <>
     
@@ -15,7 +20,7 @@ const NavbarBazar = (props) =>{
           flexDirection: 'row', display: 'flex', alignItems: 'center', left: -30,
           position: 'relative', textDecoration:'none'
         }}
-          href={'/Login'}
+        href={usuario===null?'/Login':`/Usuario`}
         >
           <img
             src={user}
@@ -25,10 +30,13 @@ const NavbarBazar = (props) =>{
           />
 
           <h1 >
-            Login
+            {usuario===null?'Login':usuario.FirstName}
           </h1>
         </a>
-        <a style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' , textDecoration:'none'}}>
+        {
+          usuario===null
+          ?
+        <a style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' , textDecoration:'none'}} href={'/Registrar'}>
           <img
             src={padlock}
             alt=''
@@ -39,7 +47,9 @@ const NavbarBazar = (props) =>{
           <h1>
             Registrar
           </h1>
-        </a>
+          </a>
+          :<></>
+        }
         <div style={{ width: 50 }} />
       </nav>
       <nav className='nav2'>
