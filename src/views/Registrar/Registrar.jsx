@@ -65,7 +65,7 @@ export default function Registrar(props) {
             alert(respostaTexto)
           }
           else{
-            alert('trocar de pagina')
+            window.location=`/SucessoRegistrar`
           }
         
     }
