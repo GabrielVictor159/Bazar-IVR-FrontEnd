@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import "./navbarBazar.css"
 import user from '../assets/user.png';
@@ -9,12 +9,14 @@ import basket from '../assets/basket.png'
 import getUser from './getUser';
 const NavbarBazar = (props) =>{
   const usuario = getUser()
+  
   useEffect(()=>{
     console.log(usuario)
   },[])
+ 
   return (
     <>
-    
+    <div className='NavContainer'>
       <nav style={{ width: '100%', height: props.height*0.05, backgroundColor: '#575757', position: 'relative', top: 0, left: 0, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', overflow: 'visible' }}>
         <a style={{
           flexDirection: 'row', display: 'flex', alignItems: 'center', left: -30,
@@ -80,8 +82,8 @@ const NavbarBazar = (props) =>{
         </div>
         :<></>
         }
-        <a>
-          <img 
+        <a onClick={props.handleCesta} >
+          <img style={{cursor:'pointer'}}
           src={basket}
           width={50}
           height={50}
@@ -113,6 +115,8 @@ const NavbarBazar = (props) =>{
         </a>
         </div>
     </nav>
+    </div>
+    
     </>
 
 

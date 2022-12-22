@@ -1,7 +1,10 @@
 body {
     background-color: #FFFFFF;
 }
-
+.NavContainer{
+    width: 100%;
+    
+}
 nav h1 {
     font-family: Arial, Helvetica, sans-serif !important;
     font-size: 1em !important;
@@ -63,4 +66,5 @@ nav img {
     background-color: #00AECD !important;
     color: white !important;
 }
+
 

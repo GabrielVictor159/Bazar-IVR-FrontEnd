@@ -1,0 +1,41 @@
+.CestaContainer{
+    width: 400px;
+    height: 700px;
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+    top: 230px;
+ transition: all 0.5s;
+ z-index: 1;
+    
+}
+.CestaContainerHidden{
+    z-index: -1;
+    
+    
+}
+.Cesta{
+    width: 90%;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    box-shadow: -20px 20px 0px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgb(112, 112, 112);
+    transition: all 0.5s;
+    left: 5%;
+}
+.CestaHidden{
+    left: 130%;
+}
+.CestaImageContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.CestaItensContainer{
+    width: 100%;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

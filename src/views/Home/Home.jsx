@@ -9,6 +9,7 @@ import slide3 from '../../assets/slide-03.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Produtos from '../../components/Produtos';
 import getUser from '../../components/getUser';
+import Cesta from '../../components/Cesta';
 export default function Home(props) {
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   let [listProdutos, setListProdutos] = useState();
@@ -16,10 +17,13 @@ export default function Home(props) {
   const [index, setIndex] = useState(0);
   const [page, setPage] = useState(1);
   const [size, setSize] = useState(9);
+  const [CestaVisible, setCestaVisible] = useState(false);
+  
   useEffect(() => {
     fetch(`http://localhost:3030/Produtos/FindAllLazyLoading/${index}/${size}`)
     .then((response) => response.json())
     .then((data) => setProdutos(data))
+
   
   },[])
 
@@ -45,6 +49,9 @@ export default function Home(props) {
   function setProduct(callback){
     window.location=`/Produto/${callback}`
   }
+  function handleCesta (){
+    setCestaVisible(!CestaVisible)
+  }
   const mapProdutos = (callback)=>{
  
     try {
@@ -64,8 +71,8 @@ export default function Home(props) {
 
   return (
     <>
-      <NavbarBazar active={'Home'} width={windowSize.current[0]} height={windowSize.current[1]} />
-      <div style={{ top: windowSize.current[1] * 0.22, width: '100%' }}>
+      <NavbarBazar handleCesta={handleCesta} active={'Home'} width={windowSize.current[0]} height={windowSize.current[1]} />
+      <div style={{ top: windowSize.current[1] * 0.22, width: '100%'}}>
         <Carousel>
           <Carousel.Item>
             <img
@@ -131,7 +138,7 @@ export default function Home(props) {
 
         </footer>
 
-
+      <Cesta width={windowSize.current[0]} CestaVisible={CestaVisible}/>
     </>
 
 

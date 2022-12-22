@@ -4,10 +4,12 @@ import { useParams } from "react-router-dom";
 import NavbarBazar from '../../components/navbarBazar';
 import "./Produto.css"
 import Book from "../../assets/book.png"
+import Cesta from "../../components/Cesta";
 export default function Produto(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     let { id } = useParams();
     const [produto, setProduto] = useState('');
+    const [CestaVisible, setCestaVisible] = useState(false);
     useEffect( ()=>{
       
         fetch(`http://localhost:3030/Produtos/${id}`)
@@ -17,10 +19,12 @@ export default function Produto(props){
      
   
     },[])
-   
+    function handleCesta (){
+      setCestaVisible(!CestaVisible)
+    }
     return(
         <>
-          <NavbarBazar  width={windowSize.current[0]} height={windowSize.current[1]} />
+          <NavbarBazar handleCesta={handleCesta} width={windowSize.current[0]} height={windowSize.current[1]} />
           <div className="BoxProduto">
                 <div className="BoxImage" >
                 <img className="ImageProduto" src={produto.LinkImage}/>
@@ -58,6 +62,8 @@ export default function Produto(props){
           <footer>
             
           </footer>
+          <Cesta width={windowSize.current[0]} CestaVisible={CestaVisible}/>
+          
         </>
        
     );
