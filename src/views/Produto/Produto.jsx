@@ -1,3 +1,5 @@
+// javascript array indexOf ?
+
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useRef } from 'react';
 import { useParams } from "react-router-dom";
@@ -10,6 +12,7 @@ export default function Produto(props){
     let { id } = useParams();
     const [produto, setProduto] = useState('');
     const [CestaVisible, setCestaVisible] = useState(false);
+    const [atualizar, setAtualizar] = useState(0);
     useEffect( ()=>{
       
         fetch(`http://localhost:3030/Produtos/${id}`)
@@ -20,7 +23,76 @@ export default function Produto(props){
   
     },[])
     function handleCesta (){
+  
+      if(CestaVisible){
+        document.getElementById('Cesta').classList.toggle('CestaHidden');
+        document.getElementById('CestaContainer').classList.remove('CestaContainerHidden');
+      }
+      else{
+        document.getElementById('Cesta').classList.remove('CestaHidden');
+       document.getElementById('CestaContainer').classList.toggle('CestaContainerHidden');
+      }
       setCestaVisible(!CestaVisible)
+      
+    }
+    
+    function AddCesta(){
+      function findId(array,id){
+       
+        return array.findIndex(object => {
+          return object.idProduto === id;
+        });
+      }
+      let a =[]
+      if(localStorage.getItem('Cesta')!==null){
+      try{
+        a = JSON.parse(localStorage.getItem('Cesta'))
+        console.log(produto.idProduto)
+        if(findId(a, produto.idProduto)===-1){
+        a.push(
+          {
+           idProduto:produto.idProduto,
+           Nome:produto.Nome,
+           Descricao:produto.Descricao,
+           Quantidade:1,
+           LinkImage:produto.LinkImage,
+           Valor:produto.Valor
+          }
+        )
+        localStorage.setItem('Cesta', JSON.stringify(a))
+        setAtualizar(atualizar+1)
+        }
+        else{
+          console.log(findId(a, produto.idProduto))
+          a[findId(a, produto.idProduto)].Quantidade += 1;
+          localStorage.setItem('Cesta', JSON.stringify(a))
+
+          setAtualizar(atualizar+1)
+        }
+      }
+      catch(exception){
+        console.log(exception.message)
+      }
+    }
+    else{
+      try{
+        a.push(
+          {
+           idProduto:produto.idProduto,
+           Nome:produto.Nome,
+           Descricao:produto.Descricao,
+           Quantidade:1,
+           LinkImage:produto.LinkImage,
+           Valor:produto.Valor
+          }
+        )
+        localStorage.setItem('Cesta', JSON.stringify(a))
+        setAtualizar(atualizar+1)
+      }
+      catch(exception){
+        console.log(exception.message)
+      }
+    }
     }
     return(
         <>
@@ -40,7 +112,7 @@ export default function Produto(props){
                 {'Comprar'}
                 </h6>
                 </div>
-                <div className="Button" style={{backgroundColor:'#0E778A', left:20}}>
+                <div className="Button" style={{backgroundColor:'#0E778A', left:20}} onClick={AddCesta}>
                 <h6 style={{color:'white'}}>
                 {'Adicionar ao Carrinho'}
                 </h6>
@@ -62,9 +134,10 @@ export default function Produto(props){
           <footer>
             
           </footer>
-          <Cesta width={windowSize.current[0]} CestaVisible={CestaVisible}/>
+          <Cesta atualizar={atualizar} setAtualizar={setAtualizar} width={windowSize.current[0]} CestaVisible={CestaVisible}/>
           
         </>
        
     );
+    
 }

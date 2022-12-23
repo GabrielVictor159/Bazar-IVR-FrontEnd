@@ -54,6 +54,7 @@
     cursor: pointer;
     box-shadow: 5px 5px 2px rgb(117, 117, 117);
     transition: all 0.5s;
+    z-index: 2;
 }
 .Button:hover{
     top: -10px;
@@ -101,4 +102,19 @@
     top: 20px;
     
 
+}
+
+@media only screen and (max-width: 800px ) {
+    .BoxProduto{
+        
+        flex-direction: column;
+        
+    }
+    .Button{
+        width: 150px;
+        text-align: center;
+        transition: all 0.5s;
+        
+    }
+    
 }

@@ -18,7 +18,7 @@ export default function Home(props) {
   const [page, setPage] = useState(1);
   const [size, setSize] = useState(9);
   const [CestaVisible, setCestaVisible] = useState(false);
-  
+  const [atualizar, setAtualizar] = useState(0);
   useEffect(() => {
     fetch(`http://localhost:3030/Produtos/FindAllLazyLoading/${index}/${size}`)
     .then((response) => response.json())
@@ -50,7 +50,17 @@ export default function Home(props) {
     window.location=`/Produto/${callback}`
   }
   function handleCesta (){
+  
+    if(CestaVisible){
+      document.getElementById('Cesta').classList.toggle('CestaHidden');
+      document.getElementById('CestaContainer').classList.remove('CestaContainerHidden');
+    }
+    else{
+      document.getElementById('Cesta').classList.remove('CestaHidden');
+     document.getElementById('CestaContainer').classList.toggle('CestaContainerHidden');
+    }
     setCestaVisible(!CestaVisible)
+    
   }
   const mapProdutos = (callback)=>{
  
@@ -138,7 +148,7 @@ export default function Home(props) {
 
         </footer>
 
-      <Cesta width={windowSize.current[0]} CestaVisible={CestaVisible}/>
+      <Cesta atualizar={atualizar} setAtualizar={setAtualizar} width={windowSize.current[0]} CestaVisible={CestaVisible}/>
     </>
 
 

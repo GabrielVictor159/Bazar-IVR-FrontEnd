@@ -13,7 +13,15 @@ const NavbarBazar = (props) =>{
   useEffect(()=>{
     console.log(usuario)
   },[])
- 
+ function getLengthCesta(){
+  try{
+    let z = JSON.parse(localStorage.getItem('Cesta'))
+    return z.length
+  }
+  catch{
+    return 0
+  }
+ }
   return (
     <>
     <div className='NavContainer'>
@@ -82,11 +90,14 @@ const NavbarBazar = (props) =>{
         </div>
         :<></>
         }
-        <a onClick={props.handleCesta} >
+        <a onClick={props.handleCesta} style={{zIndex:2}}>
+          <div style={{width:20, height:20,position:'absolute', zIndex:1,transform:"translate(20px,-10px)", backgroundColor:'white', borderRadius:100, display:'flex',textAlign:'center', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <h6>{getLengthCesta()}</h6>
+          </div>
           <img style={{cursor:'pointer'}}
           src={basket}
-          width={50}
-          height={50}
+          width={45}
+          height={45}
           />
         </a>
     </nav>

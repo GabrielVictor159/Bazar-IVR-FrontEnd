@@ -6,7 +6,7 @@
     overflow: hidden;
     top: 230px;
  transition: all 0.5s;
- z-index: 1;
+ z-index: 3;
     
 }
 .CestaContainerHidden{
@@ -22,10 +22,52 @@
     box-shadow: -20px 20px 0px rgba(0, 0, 0, 0.3);
     border: 3px solid rgb(112, 112, 112);
     transition: all 0.5s;
-    left: 5%;
+    left: 130%;
+    
+}
+.CestaItem{
+width: 100%;
+height: 170px;
+border-bottom: 2px solid rgb(88, 88, 88);
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+}
+.CestaItemImageContainer{
+    width: 100px;
+    height: 100px;
+    background-color: #D9D9D9;
+}
+.CestaItemImage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.CestaItemDescricaoContainer{
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.NegativeSymbol{
+    color: rgb(49, 221, 252);
+    transition: all 0.5s;
+}
+.NegativeSymbol:hover{
+    color: rgb(36, 157, 179);
+}
+.PositiveSymbol{
+    color: rgb(49, 221, 252);
+    transition: all 0.5s;
+}
+.PositiveSymbol:hover{
+    color: rgb(39, 166, 189);
 }
 .CestaHidden{
-    left: 130%;
+    left: 5%;
 }
 .CestaImageContainer{
     width: 100%;
@@ -38,4 +80,27 @@
     height: 60%;
     overflow-x: hidden;
     overflow-y: scroll;
+}
+.CestaItensContainerButton{
+    width: 100%;
+    height: 100px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+}
+.CestaItensButton{
+    width: 40%;
+    height: 40px;
+    border: none;
+    font-weight: bold;
+    background-color: #00CAEC;
+    position: relative;
+    top: 0px;
+    box-shadow: 5px 5px 1px rgba(80, 80, 80, 0.212);
+    transition: all 0.5s;
+}
+.CestaItensButton:hover{
+    top: -10px;
+    box-shadow: 8px 8px 1px rgba(80, 80, 80, 0.212);
 }

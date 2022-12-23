@@ -10,7 +10,7 @@ export default function Produtos(props){
             </div>
             <div style={{width:'100%', height:'20%', display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center'}}>
             <p>{props.titulo}</p>
-            <h5>{`$RS ${props.valor}`}</h5>
+            <h5>{`R$ ${props.valor}`}</h5>
             </div>
         </div>
         </>

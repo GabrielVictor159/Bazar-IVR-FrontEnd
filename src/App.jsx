@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import { Route, Routes, Link } from "react-router-dom";
 import Home from './views/Home/Home';
@@ -9,6 +9,7 @@ import Usuario from './views/Usuario/Usuario';
 import Registrar from './views/Registrar/Registrar';
 import SucessoRegistrar from './views/Registrar/SucessoRegistrar/SucessoRegistrar';
 function App() {
+  
  
 
   return (
