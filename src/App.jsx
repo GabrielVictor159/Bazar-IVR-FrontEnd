@@ -10,6 +10,8 @@ import Registrar from './views/Registrar/Registrar';
 import SucessoRegistrar from './views/Registrar/SucessoRegistrar/SucessoRegistrar';
 import EsqueceuSenha from './views/EsqueceuSenha/EsqueceuSenha';
 import EsqueceuSenhaSucesso from './views/EsqueceuSenha/EsqueceuSenhaSucesso/EsqueceuSenhaSucesso';
+import RedefinirSenha from './views/EsqueceuSenha/RedefinirSenha/RedefinirSenha';
+import RedefinirSenhaSucesso from './views/EsqueceuSenha/RedefinirSenha/RedefinirSenhaSucesso/RedefinirSenhaSucesso';
 function App() {
   
  
@@ -25,6 +27,8 @@ function App() {
     <Route path='/SucessoRegistrar' element={<SucessoRegistrar />} />
     <Route path='/EsqueceuSenha' element={<EsqueceuSenha />}/>
     <Route path='/EsqueceuSenhaSucesso' element={<EsqueceuSenhaSucesso />}/>
+    <Route path='/RedefinirSenha/:email/:senha' element={<RedefinirSenha />}/>
+    <Route path='/RedefinirSenhaSucesso' element={<RedefinirSenhaSucesso />}/>
   </Routes>
   )
 }

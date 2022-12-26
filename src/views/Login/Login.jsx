@@ -72,7 +72,7 @@ export default function Login(props) {
                 <h6 className="LoginText">{'Login'}</h6>
                 </div>
                 <br />
-                <a className="RegistreSeText" >Registre-se</a>
+                <a className="RegistreSeText" href="/Registrar" >Registre-se</a>
                 <br />
                 </div>
             </div>
