@@ -1,0 +1,37 @@
+.EsqueceuSenhaContainer{
+    width: 518px;
+    height: 50%;
+    background-color: white;
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+}
+.TituloEsqueceuSenha{
+    font-size: 40px;
+    font-weight: 600;
+}
+.InputEmailEsqueceuSenha{
+    width: 80%;
+    height: 60px;
+    background-color: #D9D9D9;
+    padding-left: 15%;
+    border: none;
+    background-image: url('../../assets/mail.png');
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+.ButtonEnviarEsqueceuSenha{
+    width: 80%;
+    height: 55px;
+    border: none;
+    background-color: #67EFFA;
+    font-size: 20px;
+    font-weight:600;
+    transition: all 0.5s;
+}
+.ButtonEnviarEsqueceuSenha:hover{
+    background-color: #3f99a0;
+}

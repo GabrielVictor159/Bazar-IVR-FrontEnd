@@ -8,6 +8,8 @@ import Produto from './views/Produto/Produto';
 import Usuario from './views/Usuario/Usuario';
 import Registrar from './views/Registrar/Registrar';
 import SucessoRegistrar from './views/Registrar/SucessoRegistrar/SucessoRegistrar';
+import EsqueceuSenha from './views/EsqueceuSenha/EsqueceuSenha';
+import EsqueceuSenhaSucesso from './views/EsqueceuSenha/EsqueceuSenhaSucesso/EsqueceuSenhaSucesso';
 function App() {
   
  
@@ -21,6 +23,8 @@ function App() {
     <Route path='/Usuario' element={<Usuario />} />
     <Route path='/Registrar' element={<Registrar />}/>
     <Route path='/SucessoRegistrar' element={<SucessoRegistrar />} />
+    <Route path='/EsqueceuSenha' element={<EsqueceuSenha />}/>
+    <Route path='/EsqueceuSenhaSucesso' element={<EsqueceuSenhaSucesso />}/>
   </Routes>
   )
 }

@@ -61,7 +61,7 @@ export default function Login(props) {
                 <br />
                 <input type={'password'} placeholder={'Senha'} onChange={e => setPassword(e.target.value)} className={'InputsLogin'}/>
                 <div className="EsqueciSenhaContainer">
-                <a className="EsqueciSenha">Esqueci a Senha</a>
+                <a className="EsqueciSenha" href="/EsqueceuSenha">Esqueci a Senha</a>
                 </div>
                 <div className="LembrarContainer" id="LembrarContainer">
                     <div onClick={handleLembrar} className="LembrarInput" id="LembrarInput" />

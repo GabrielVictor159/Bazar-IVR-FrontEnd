@@ -17,7 +17,7 @@ export default function Home(props) {
   const [index, setIndex] = useState(0);
   const [page, setPage] = useState(1);
   const [size, setSize] = useState(9);
-  const [CestaVisible, setCestaVisible] = useState(false);
+  const [CestaVisible, setCestaVisible] = useState(true);
   const [atualizar, setAtualizar] = useState(0);
   useEffect(() => {
     fetch(`http://localhost:3030/Produtos/FindAllLazyLoading/${index}/${size}`)
@@ -53,11 +53,11 @@ export default function Home(props) {
   
     if(CestaVisible){
       document.getElementById('Cesta').classList.toggle('CestaHidden');
-      document.getElementById('CestaContainer').classList.remove('CestaContainerHidden');
+      document.getElementById('CestaContainer').classList.toggle('CestaContainerHidden');
     }
     else{
       document.getElementById('Cesta').classList.remove('CestaHidden');
-     document.getElementById('CestaContainer').classList.toggle('CestaContainerHidden');
+     document.getElementById('CestaContainer').classList.remove('CestaContainerHidden');
     }
     setCestaVisible(!CestaVisible)
     

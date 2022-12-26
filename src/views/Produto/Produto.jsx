@@ -11,7 +11,7 @@ export default function Produto(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     let { id } = useParams();
     const [produto, setProduto] = useState('');
-    const [CestaVisible, setCestaVisible] = useState(false);
+    const [CestaVisible, setCestaVisible] = useState(true);
     const [atualizar, setAtualizar] = useState(0);
     useEffect( ()=>{
       
@@ -26,11 +26,11 @@ export default function Produto(props){
   
       if(CestaVisible){
         document.getElementById('Cesta').classList.toggle('CestaHidden');
-        document.getElementById('CestaContainer').classList.remove('CestaContainerHidden');
+        document.getElementById('CestaContainer').classList.toggle('CestaContainerHidden');
       }
       else{
         document.getElementById('Cesta').classList.remove('CestaHidden');
-       document.getElementById('CestaContainer').classList.toggle('CestaContainerHidden');
+       document.getElementById('CestaContainer').classList.remove('CestaContainerHidden');
       }
       setCestaVisible(!CestaVisible)
       
@@ -61,6 +61,7 @@ export default function Produto(props){
         )
         localStorage.setItem('Cesta', JSON.stringify(a))
         setAtualizar(atualizar+1)
+        window.location="/"
         }
         else{
           console.log(findId(a, produto.idProduto))
@@ -68,6 +69,7 @@ export default function Produto(props){
           localStorage.setItem('Cesta', JSON.stringify(a))
 
           setAtualizar(atualizar+1)
+          window.location="/"
         }
       }
       catch(exception){
@@ -88,6 +90,7 @@ export default function Produto(props){
         )
         localStorage.setItem('Cesta', JSON.stringify(a))
         setAtualizar(atualizar+1)
+        window.location="/"
       }
       catch(exception){
         console.log(exception.message)
