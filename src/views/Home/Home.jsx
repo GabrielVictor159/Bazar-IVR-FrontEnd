@@ -113,11 +113,15 @@ export default function Home(props) {
         </Carousel>
       </div>
       <br />
+      <br />
       <div className='TituloProdutos' >
         <div>
           <h1>Produtos</h1>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
       <div className='containerProdutos'>
         {
            mapProdutos(produtos)
@@ -125,6 +129,9 @@ export default function Home(props) {
         }
 
       </div>
+      <br />
+      <br />
+      <br />
       <div className='containerNavegation'>
         <div className='containerNavegationOptions'>
           { page >1?
@@ -143,7 +150,9 @@ export default function Home(props) {
         </div>
         </div>
       </div>
-
+      <br />
+      <br />
+      <br />
         <footer>
 
         </footer>

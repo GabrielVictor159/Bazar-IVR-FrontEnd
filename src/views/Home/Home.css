@@ -1,8 +1,5 @@
 .slideContainer {
-    width: 100%;
-
-    position: absolute;
-    top: 22%;
+    width: 100%; 
     left: 0;
     overflow: visible;
     border-radius: 5px;
@@ -51,7 +48,6 @@
     width: 180px;
     border-bottom: 5px solid #68EBE8; 
     position: relative;
-    top: 20px;
 }
 .containerProdutos{
     padding-bottom: 40px;
@@ -62,7 +58,6 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    top: 100px;
     gap: 40px;
     overflow:hidden;
     
@@ -89,7 +84,7 @@
     width: 100%;
     height: 100px;
     position: relative;
-    top: 150px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,8 +116,6 @@
     box-shadow: 10px 10px 2px rgb(133, 133, 133);
 }
 footer{
-    position: relative;
-    top: 250px;
     height: 200px;
     background-color: #434343;
 }
