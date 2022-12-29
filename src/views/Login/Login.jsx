@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import Logar from "../../components/logar";
 import './Login.css'
 export default function Login(props) {
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -9,33 +10,10 @@ export default function Login(props) {
         document.body.style.background = 'linear-gradient(90deg, #0071DA 0%, #73FDFD 100%)'
     }, [])
     const logar =async()=>{
-        let resposta;
-        let status;
-       const res = await fetch(`http://localhost:3030/Usuarios/${Email}/${password}`, {
-            method: 'GET',
-            mode: 'cors', 
-            cache: 'no-cache', 
-            credentials: 'same-origin', 
-           
-         
-          })
-          resposta = (await res.text())
-          status = res.status
-          if(status === 200){
-          if(resposta === 'Usuario não encontrado'){
-            alert('Email ou senha incorretos')
-          }
-          else{
-            console.log(resposta)
-            Lembrar===false
-            ?sessionStorage.setItem('usuario',resposta)
-            :localStorage.setItem('usuario', resposta)
-            window.location=`/`
-          }
-        }
-        else{
-            alert('Houve algum erro')
-        }
+       const log = await Logar(Email, password, Lembrar)
+       log === 'Sucesso'
+       ?window.location='/'
+       :alert(log)
     
     }
     const handleLembrar=()=>{
