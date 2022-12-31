@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Keys from "../../../Keys";
 import "./EsqueceuSenha.css"
 export default function EsqueceuSenha(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -13,7 +14,7 @@ export default function EsqueceuSenha(props){
         }
         let resposta;
         let status;
-       const res = await fetch(`http://localhost:3030/EsqueceuSenha/${Email}`, {
+       const res = await fetch(`${Keys.backEnd}/EsqueceuSenha/${Email}`, {
             method: 'POST',
             mode: 'cors', 
             cache: 'no-cache', 

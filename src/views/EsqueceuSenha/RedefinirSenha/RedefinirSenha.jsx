@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import Keys from "../../../../Keys";
 import "./RedefinirSenha.css"
 export default function RedefinirSenha(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -25,7 +26,7 @@ export default function RedefinirSenha(props){
         let resposta;
         let status;
         console.log(JSON.stringify(data))
-        let res = await fetch(`http://localhost:3030/UsuariosEsqueceuSenhaAlterarSenha/`, {
+        let res = await fetch(`${Keys.backEnd}/UsuariosEsqueceuSenhaAlterarSenha/`, {
             method: 'PUT',
             mode: 'cors', 
             headers: {

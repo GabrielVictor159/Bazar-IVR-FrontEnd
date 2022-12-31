@@ -12,6 +12,7 @@ import EsqueceuSenha from './views/EsqueceuSenha/EsqueceuSenha';
 import EsqueceuSenhaSucesso from './views/EsqueceuSenha/EsqueceuSenhaSucesso/EsqueceuSenhaSucesso';
 import RedefinirSenha from './views/EsqueceuSenha/RedefinirSenha/RedefinirSenha';
 import RedefinirSenhaSucesso from './views/EsqueceuSenha/RedefinirSenha/RedefinirSenhaSucesso/RedefinirSenhaSucesso';
+import FinalizarCompra from './views/FinalizarCompra/FinalizarCompra';
 function App() {
   
  
@@ -29,6 +30,7 @@ function App() {
     <Route path='/EsqueceuSenhaSucesso' element={<EsqueceuSenhaSucesso />}/>
     <Route path='/RedefinirSenha/:email/:senha' element={<RedefinirSenha />}/>
     <Route path='/RedefinirSenhaSucesso' element={<RedefinirSenhaSucesso />}/>
+    <Route path='/FinalizarCompra' element={<FinalizarCompra />}/>
   </Routes>
   )
 }

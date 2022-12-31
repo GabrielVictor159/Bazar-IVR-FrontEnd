@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Keys from "../../../Keys";
 import "./Registrar.css"
 export default function Registrar(props) {
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -46,7 +47,7 @@ export default function Registrar(props) {
             Email: Email,
             Telefone:Telefone
         }
-        const response = await fetch("http://localhost:3030/CadastrarSolicitacao", {
+        const response = await fetch(`${Keys.backEnd}/CadastrarSolicitacao`, {
             method: 'POST', 
             mode: 'cors', 
             cache: 'no-cache', 

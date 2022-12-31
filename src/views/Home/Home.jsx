@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Produtos from '../../components/Produtos';
 import getUser from '../../components/getUser';
 import Cesta from '../../components/Cesta';
+import Keys from '../../../Keys';
 export default function Home(props) {
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   let [listProdutos, setListProdutos] = useState();
@@ -20,7 +21,7 @@ export default function Home(props) {
   const [CestaVisible, setCestaVisible] = useState(true);
   const [atualizar, setAtualizar] = useState(0);
   useEffect(() => {
-    fetch(`http://localhost:3030/Produtos/FindAllLazyLoading/${index}/${size}`)
+    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${index}/${size}`)
     .then((response) => response.json())
     .then((data) => setProdutos(data))
 
@@ -33,7 +34,7 @@ export default function Home(props) {
     const newIndex = index+ size
     setPage(pageN)
     setIndex(newIndex)
-    fetch(`http://localhost:3030/Produtos/FindAllLazyLoading/${newIndex}/${size}`)
+    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${newIndex}/${size}`)
     .then((response) => response.json())
     .then((data) => setProdutos(data))
   }
@@ -42,7 +43,7 @@ export default function Home(props) {
     const newBackIndex = index -size
     setPage(pageN)
     setIndex(newBackIndex)
-    fetch(`http://localhost:3030/Produtos/FindAllLazyLoading/${newBackIndex}/${size}`)
+    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${newBackIndex}/${size}`)
     .then((response) => response.json())
     .then((data) => setProdutos(data))
   }

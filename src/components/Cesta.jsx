@@ -1,12 +1,7 @@
 
-
-
-
-
 import React, { useEffect, useState } from "react";
 import "./Cesta.css"
 import bag from "../assets/basket.png"
-
 export default function Cesta(props) {
 
     const [ValorTotal, setValorTotal] = useState(0);
@@ -14,6 +9,9 @@ export default function Cesta(props) {
        
         setValorTotal(valorTotal())
     })
+    function realizarPagamento() {
+        window.location="/FinalizarCompra"
+      }
     function alterarQuantidade(index, operador){
         let a = JSON.parse(localStorage.getItem('Cesta'))
         if(operador =="-" && a[index].Quantidade<=1){
@@ -107,7 +105,7 @@ export default function Cesta(props) {
                 </div>
                 <div className="CestaItensContainerButton">
                     <h6>{`Valor Total: R$ ${ValorTotal}`}</h6>
-                    <button className="CestaItensButton">Finalizar</button>
+                    <button className="CestaItensButton"  onClick={realizarPagamento}>Finalizar</button>
                 </div>
             </div>
         </div>

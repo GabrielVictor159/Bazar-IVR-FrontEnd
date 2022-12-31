@@ -7,6 +7,7 @@ import NavbarBazar from '../../components/navbarBazar';
 import "./Produto.css"
 import Book from "../../assets/book.png"
 import Cesta from "../../components/Cesta";
+import Keys from "../../../Keys";
 export default function Produto(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     let { id } = useParams();
@@ -15,7 +16,7 @@ export default function Produto(props){
     const [atualizar, setAtualizar] = useState(0);
     useEffect( ()=>{
       
-        fetch(`http://localhost:3030/Produtos/${id}`)
+        fetch(`${Keys.backEnd}/Produtos/${id}`)
             .then((responde)=>responde.json())
             .then((data)=> setProduto(data));
           

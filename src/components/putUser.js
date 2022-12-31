@@ -1,3 +1,4 @@
+import Keys from "../../Keys";
 import Logar from "./logar";
 
 export default async function putUser(newParameter, type){
@@ -43,7 +44,7 @@ export default async function putUser(newParameter, type){
 
             let resposta;
             let status;
-            const res = await fetch(`http://localhost:3030/Usuarios`, {
+            const res = await fetch(`${Keys.backEnd}/Usuarios`, {
                 method: 'PUT',
                 mode: 'cors', 
                 cache: 'no-cache', 

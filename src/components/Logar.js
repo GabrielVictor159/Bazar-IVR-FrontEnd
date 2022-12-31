@@ -1,9 +1,10 @@
+import Keys from "../../Keys";
+
 export default async function  Logar(Email, password, Lembrar){
     let resposta;
     let status;
-   const res = await fetch(`http://localhost:3030/Usuarios/${Email}/${password}`, {
+   const res = await fetch(`${Keys.backEnd}/Usuarios/${Email}/${password}`, {
         method: 'GET',
-        mode: 'cors', 
         cache: 'no-cache', 
         credentials: 'same-origin', 
        
