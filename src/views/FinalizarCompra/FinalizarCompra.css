@@ -1,0 +1,37 @@
+.FinalizarCompra_bodyItens {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FinalizarCompra_formEndereco {
+    left: 2%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.FinalizarCompra_containerEndereco {
+    width: 1000px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    box-shadow: 15px 15px 2px rgba(0, 0, 0, 0.3)
+}
+
+.FinalizarCompra_input {
+    position: relative;
+    left: 10px;
+}
+
+.FinalizarCompra_itensContainer {
+    width: 1000px;
+    height: 1000px;
+    background-color: white;
+    box-shadow: 15px 15px 2px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

@@ -52,6 +52,7 @@
 .containerProdutos{
     padding-bottom: 40px;
     width: 100%;
+    min-height: 600px;
     display: grid;
     flex-direction: row;
     justify-content:space-around;

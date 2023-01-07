@@ -51,6 +51,8 @@ justify-content: space-evenly;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    flex-wrap: wrap;
+    
 }
 .NegativeSymbol{
     color: rgb(49, 221, 252);

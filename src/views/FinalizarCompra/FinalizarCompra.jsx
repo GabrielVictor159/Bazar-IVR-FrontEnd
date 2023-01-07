@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import axios from 'axios';
 import Keys from '../../../Keys';
-
+import NavbarBazar from '../../components/navbarBazar';
+import "./FinalizarCompra.css"
 export default function FinalizarCompra() {
+    const windowSize = useRef([window.innerWidth, window.innerHeight]);
+    const [atualizar, setAtualizar] = useState(0)
     const [cep, setCEP] = useState('');
     const [cepError, setCEPError] = useState('');
     const [rua, setRua] = useState('');
@@ -17,18 +20,18 @@ export default function FinalizarCompra() {
         let a = JSON.parse(localStorage.getItem('usuario'))
         if (a === null) {
             a = JSON.parse(sessionStorage.getItem('usuario'))
-            if(a==null){
-                window.location="/Login"
+            if (a == null) {
+                window.location = "/Login"
             }
         }
         let b = JSON.parse(localStorage.getItem('Cesta'))
         if (b === null) {
             b = JSON.parse(sessionStorage.getItem('Cesta'))
-            if(b==null){
-                window.location="/"
+            if (b == null) {
+                window.location = "/"
             }
         }
-       
+
         if (rua === '') {
             console.log('Parou em rua')
             return false
@@ -60,6 +63,9 @@ export default function FinalizarCompra() {
 
         }
     }
+    useLayoutEffect(() => {
+        document.body.style.background = 'linear-gradient(90deg, #0071DA 0%, #73FDFD 100%)'
+    }, [])
     useEffect(() => {
         if (cep.length !== 8) {
             setCEPError('O CEP deve conter 8 dígitos');
@@ -95,27 +101,117 @@ export default function FinalizarCompra() {
             setNumero(event.target.value);
         }
     };
+    function alterarQuantidade(index, operador){
+        let a = JSON.parse(localStorage.getItem('Cesta'))
+        if(operador =="-" && a[index].Quantidade<=1){
+            a.splice(index, 1);
+            localStorage.setItem('Cesta',JSON.stringify(a))
+            setAtualizar(atualizar+1)
+            if(a.length===0){
+                localStorage.removeItem('Cesta')
+            }
+        }
+        else{
+        if(operador =="+"){
+            a[index].Quantidade += 1
+            localStorage.setItem('Cesta',JSON.stringify(a))
+            setAtualizar(atualizar+1)
+        }
+        if(operador =="-"){
+            a[index].Quantidade -= 1
+            localStorage.setItem('Cesta',JSON.stringify(a))
+            setAtualizar(atualizar+1)
+        }
+    }
+    }
+    function mapItens() {
+        if (localStorage.getItem('Cesta') !== null) {
+            let a = JSON.parse(localStorage.getItem('Cesta'))
+            return a.map((value, index) => {
+                return (
+                    <>
+                        <div key={index} className='CestaItem'>
+                            <div className="CestaItemImageContainer">
+                                <img className="CestaItemImage" src={value.LinkImage} />
+                            </div>
+                            <div className="CestaItemDescricaoContainer">
+                            <h6>{`Nome do Produto: ${value.Nome}`}</h6>
+                                
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                    <h6>{`Quantidade: `}</h6>
+                                    <div style={{ width: 40, height: 20, display: 'flex', flexDirection: 'row', alignItems: 'center', textAlign: 'center' }}>
+                                        <h6 onClick={e => alterarQuantidade(index, "-")} style={{ fontSize: 70, position: 'relative', top: -5, left: 0 , cursor:'pointer'}} className={'NegativeSymbol'}>{'-'}</h6>
+                                    </div>
+                                    <h6 >{` ${value.Quantidade}`}</h6>
+                                    <div style={{ width: 40, height: 20, display: 'flex', flexDirection: 'row', alignItems: 'center', textAlign: 'center' }}>
+                                        <h6 onClick={e => alterarQuantidade(index, "+")} style={{ fontSize: 45, position: 'relative', top: 0, left: 10 , cursor:'pointer'}} className={'PositiveSymbol'}>{'+'}</h6>
+                                    </div>
 
+                                </div>
+                                
+                                <h6>{`Valor Total: R$ ${value.Valor * value.Quantidade}`}</h6>
+                                <div style={{width:'70%',height:'80%', position:'relative', left:20}}>
+                                <h6>Descrição:</h6>
+                                <p>{`${value.Descricao}`}</p>
+                            </div>
+                            </div>
+                            
+                        </div>
+                        <br />
+                    </>
+                )
+            })
+        }
+        else {
+            return <></>
+        }
+    }
     return (
         <>
-            <form style={{display:'flex', flexDirection:'row'}}>
-                <label htmlFor="cep">CEP:</label>
-                <input
-                    id="cep"
-                    name="cep"
-                    type="text"
-                    value={cep}
-                    onChange={onChange}
-                />
-                <br />
-                <label htmlFor="numero">Número:</label>
-                <input id="numero" name="numero" type="number" min={0} value={numero} onChange={onChange} />
-                <br />
-            </form>
-            <div style={{display:'flex', flexDirection:'row', width:1000, justifyContent:'space-between'}}>
-            <h6><strong>produto sera entregue em: </strong></h6><p><strong>Rua:</strong> {rua}</p><p><strong>Bairro:</strong> {bairro}</p><p><strong>Numero:</strong> {numero}</p><p><strong>Cidade:</strong> {cidade}</p><p><strong>Estado:</strong> {estado }</p>
+            <NavbarBazar width={windowSize.current[0]} height={windowSize.current[1]} />
+            <div className='FinalizarCompra_bodyItens'>
+                <br /><br /><br />
+                <div className='FinalizarCompra_containerEndereco'>
+                    <form className='FinalizarCompra_formEndereco' >
+                        <label htmlFor="cep">CEP:</label>
+                        <input className='FinalizarCompra_input'
+                            id="cep"
+                            name="cep"
+                            type="text"
+                            value={cep}
+                            onKeyPress={event => {
+                                const charCode = event.charCode;
+                                if (charCode < 48 || charCode > 57) {
+                                    event.preventDefault();
+                                }
+                            }
+                            }
+                            onChange={onChange}
+                        />
+                        <br />
+                        <div style={{ position: 'relative', left: 20 }}>
+                            <label htmlFor="numero">Número:</label>
+                            <input className='FinalizarCompra_input' id="numero" name="numero" type="number" min={0} value={numero} onChange={onChange} />
+                        </div>
+
+                        <br />
+                    </form>
+                    <div style={{ position: 'relative', left: '3%', flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <h6><strong>Produto sera entregue em: </strong>  {rua} {numero} {bairro}  {cidade} {estado} </h6>
+                    </div>
+                </div>
+                <br /><br />
+                <div className='FinalizarCompra_itensContainer'>
+                {
+                        mapItens()
+                    }
+                </div>
             </div>
-            <button onClick={realizarPagamento}>Realizar pagamento</button>
+
+            <br /><br />
+            <footer>
+
+            </footer>
         </>
     );
 }

@@ -21,10 +21,13 @@ export default function Home(props) {
   const [CestaVisible, setCestaVisible] = useState(true);
   const [atualizar, setAtualizar] = useState(0);
   useEffect(() => {
-    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${index}/${size}`)
+    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${index}/${size}`,{
+      method:'GET',
+      mode:'cors'
+    })
     .then((response) => response.json())
     .then((data) => setProdutos(data))
-
+    .then((data) => console.log(data))
   
   },[])
 
@@ -34,18 +37,26 @@ export default function Home(props) {
     const newIndex = index+ size
     setPage(pageN)
     setIndex(newIndex)
-    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${newIndex}/${size}`)
+    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${newIndex}/${size}`,{
+      method:'GET',
+      mode:'cors'
+    })
     .then((response) => response.json())
     .then((data) => setProdutos(data))
+    .then((data) => console.log(data))
   }
   function backPage (){
     const pageN = page -1
     const newBackIndex = index -size
     setPage(pageN)
     setIndex(newBackIndex)
-    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${newBackIndex}/${size}`)
+    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${newBackIndex}/${size}`,{
+      method:'GET',
+      mode:'cors'
+    })
     .then((response) => response.json())
     .then((data) => setProdutos(data))
+    .then((data) => console.log(data))
   }
   function setProduct(callback){
     window.location=`/Produto/${callback}`
