@@ -26,12 +26,49 @@
     position: relative;
     left: 10px;
 }
-
-.FinalizarCompra_itensContainer {
+.FinalizarCompra_ContainerItens{
     width: 1000px;
     height: 1000px;
     background-color: white;
     box-shadow: 15px 15px 2px rgba(0, 0, 0, 0.3);
+}
+.FinalizarCompra_itensTituloContainer{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+.FinalizarCompra_itensTitulo{
+    font-size: 30px;
+    color:  #169ca5;
+    
+}
+.FinalizarCompra_buttonContainer{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.FinalizarCompra_button{
+    width: 180px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 18px;
+    border: none;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+    background-color: #1998d7;
+    transition: all 0.5s;
+}
+.FinalizarCompra_button:hover{
+    background-color: #0455a1;
+}
+.FinalizarCompra_itensContainer {
+    width: 100%;
+    height: 75%;
     overflow-x: hidden;
     overflow-y: scroll;
 }

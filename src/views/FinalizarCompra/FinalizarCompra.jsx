@@ -3,6 +3,7 @@ import axios from 'axios';
 import Keys from '../../../Keys';
 import NavbarBazar from '../../components/navbarBazar';
 import "./FinalizarCompra.css"
+import bag from "../../assets/shoppingcart.png"
 export default function FinalizarCompra() {
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [atualizar, setAtualizar] = useState(0)
@@ -64,7 +65,7 @@ export default function FinalizarCompra() {
         }
     }
     useLayoutEffect(() => {
-        document.body.style.background = 'linear-gradient(90deg, #0071DA 0%, #73FDFD 100%)'
+        document.body.style.background = '#D6E8EF'
     }, [])
     useEffect(() => {
         if (cep.length !== 8) {
@@ -201,11 +202,21 @@ export default function FinalizarCompra() {
                     </div>
                 </div>
                 <br /><br />
+                <div className='FinalizarCompra_ContainerItens'>
+                    <div className='FinalizarCompra_itensTituloContainer'>
+                    <img width={50} height={50} src={bag}/>
+                    <h6 className='FinalizarCompra_itensTitulo'>Produtos</h6>
+                    </div>
                 <div className='FinalizarCompra_itensContainer'>
                 {
                         mapItens()
                     }
                 </div>
+                <div className='FinalizarCompra_buttonContainer'>
+                    <button onClick={realizarPagamento} className='FinalizarCompra_button'>Finalizar Compra</button>
+                </div>
+                </div>
+               
             </div>
 
             <br /><br />

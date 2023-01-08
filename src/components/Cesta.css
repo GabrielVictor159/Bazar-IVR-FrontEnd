@@ -4,7 +4,7 @@
     position: fixed;
     display: flex;
     overflow: hidden;
-    top: 230px;
+    top: 100px;
  transition: all 0.5s;
  z-index: -1;
     
@@ -42,7 +42,7 @@ justify-content: space-evenly;
 .CestaItemImage{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit:cover;
 }
 .CestaItemDescricaoContainer{
     width: 50%;
