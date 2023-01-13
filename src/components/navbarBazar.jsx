@@ -102,25 +102,25 @@ const NavbarBazar = (props) =>{
         </a>
     </nav>
     <nav className='nav3'>
-        <div style={{flexDirection:'row', display:'flex', fontSize:props.width>1000 ? 15 :10, height:props.width>1200? props.height*0.06: props.height * 0.08}}>
+        <div className='nav3Div' style={{flexDirection:'row', display:'flex'}}>
         <a className={props.active==='Home'?'active':'inactive'} style={{textAlign:'center'}} href={'/'}>
-          <h3 style={{fontSize:'1.2rem'}}>
+          <h3>
           Home
           </h3>
         </a>
         <p></p>
         <a className={props.active==='Sobre'?'active':'inactive'} style={{textAlign:'center'}} href={'/Sobre'}>
-          <h3 style={{fontSize:'1.2rem'}}>
+          <h3 >
           Sobre Nós
           </h3>
         </a >
         <a className={props.active==='Quero'?'active':'inactive'} style={{textAlign:'center'}} href={'/Quero'}>
-          <h3 style={{fontSize:'1.2rem'}}>
+          <h3 >
           Quero Fazer Parte
           </h3>
         </a>
         <a className={props.active==='Ajuda'?'active':'inactive'} style={{textAlign:'center'}} href={'/Ajuda'}> 
-          <h3 style={{fontSize:'1.2rem'}}>
+          <h3 >
           Ajuda
           </h3>
         </a>

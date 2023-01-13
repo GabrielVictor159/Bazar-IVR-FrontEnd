@@ -17,6 +17,8 @@
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.5",
+    "react-toastify": "^9.1.1",
+    "sass": "^1.57.1",
     "sort-by": "^0.0.2"
   },
   "devDependencies": {

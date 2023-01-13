@@ -1,0 +1,6 @@
+@mixin neomophirsm($color,$border-radius, $distance, $blur) {
+    border-radius: $border-radius;
+    background: $color;
+    box-shadow: $distance $distance $blur darken($color, 5),
+        -#{$distance} -#{$distance} $blur lighten($color, 10);
+}

@@ -1,0 +1,80 @@
+.Compra_Informacoes_Container{
+    width: 80%;
+    height: 800px;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.3);
+}
+.Compra_Body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Compra_Titulo_Container{
+    width: 93%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.Compra_Titulo_Text{
+    font-size: 20px;
+}
+.Compra_Texts_Container{
+width: 93%;
+}
+.Compra_Status_Container{
+    display: flex;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    inline-size: max-content;
+    font-size: 12px;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 15px;
+    
+}
+.Compra_Status_Container p{
+    position: relative;
+    border: none !important;
+    top: 5px;
+}
+.Compra_Texts_Container h6{
+    font-size: 20px;
+}
+.Compra_Texts_Container p{
+    inline-size: max-content;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.Compra_Texts_TituloItem{
+    border: none !important;
+}
+.Compra_Texts_text{
+    position: relative;
+    left: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.Compra_Table_column1{
+    width: 55%;
+    padding-left: 20px;
+    text-align: start;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.Compra_Table_column2{
+    width: 15%;
+    text-align: end;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.Compra_Table_column3{
+    padding-right: 10px;
+    width: 15%;
+    text-align: end;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}

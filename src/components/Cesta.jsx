@@ -59,8 +59,7 @@ export default function Cesta(props) {
             let a = JSON.parse(localStorage.getItem('Cesta'))
             return a.map((value, index) => {
                 return (
-                    <>
-                        <div key={index} className='CestaItem'>
+                        <div key={`CestaItem${index}`} className='CestaItem'>
                             <div className="CestaItemImageContainer">
                                 <img className="CestaItemImage" src={value.LinkImage} />
                             </div>
@@ -80,9 +79,9 @@ export default function Cesta(props) {
                                 
                                 <h6>{`Valor Total: R$ ${value.Valor * value.Quantidade}`}</h6>
                             </div>
+                            <br />
                         </div>
-                        <br />
-                    </>
+                    
                 )
             })
         }

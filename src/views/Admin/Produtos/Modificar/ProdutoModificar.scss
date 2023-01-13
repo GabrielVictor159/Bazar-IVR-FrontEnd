@@ -1,0 +1,31 @@
+$name: "ProdutoAdicionar";
+@import '../../../../components/styles/boxStyles.scss';
+.#{$name}_body{
+width: 100vw;
+height: 100vh;
+background-color: white;
+}
+
+
+
+.#{$name}_select_box{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    position: relative;
+    top: 10vh;
+    justify-content: center;
+    background-color:  rgb(236, 236, 236);
+    align-items: center;
+    .#{$name}_select_container{
+        width: 500px;
+        height: 500px;
+        @include neomophirsm(rgb(204, 204, 204),13px, 10px, 0px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+

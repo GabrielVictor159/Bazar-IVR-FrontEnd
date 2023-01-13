@@ -1,0 +1,84 @@
+.AdminLogin_Container {
+    width: 500px;
+    min-height: 500px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #a6cbe6, #c5f2ff);
+    box-shadow: 20px 20px 30px #9cc0d9,
+        -20px -20px 30px #d4ffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.AdminLogin_Body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.AdminLogin_input {
+    border: 3px solid rgb(127, 170, 170);
+    border-radius: 20px;
+    background-image: linear-gradient(120deg,#3c3c3c,#585858);
+    color: rgb(127, 170, 170);
+    cursor: pointer;
+    padding: 7px 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    transition: all 1s;
+    width: 70%;
+   }
+   
+   .AdminLogin_input:focus {
+    outline-color: rgb(127, 170, 170);
+   }
+   .AdminLogin_input_Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   }
+
+   .AdminLogin_btn:link,
+.AdminLogin_btn:visited {
+ text-transform: uppercase;
+ text-decoration: none;
+ color: rgb(27, 27, 27);
+ padding: 10px 30px;
+ border: 1px solid;
+ border-radius: 1000px;
+ display: inline-block;
+ transition: all .2s;
+ position: relative;
+}
+
+.AdminLogin_btn:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+}
+
+.AdminLogin_btn:active {
+ transform: translateY(-3px);
+}
+
+.AdminLogin_btn::after {
+ content: "";
+ display: inline-block;
+ height: 100%;
+ width: 100%;
+ border-radius: 100px;
+ top: 0;
+ left: 0;
+ position: absolute;
+ z-index: -1;
+ transition: all .3s;
+}
+
+.AdminLogin_btn:hover::after {
+ background-color: rgb(0, 238, 255);
+ transform: scaleX(1.4) scaleY(1.5);
+ opacity: 0;
+}
