@@ -1,0 +1,74 @@
+@import "../../../components//styles/cardStyles.scss";
+.ProdutosHome_body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ProdutosHome_produtos{
+    width: 80%;
+    height: 70%;
+    overflow-y: hidden;
+    
+}
+.ProdutosHome_produtos:hover{
+    
+    overflow-y: scroll;
+}
+.ProdutosHome_produtos table{
+    width: 100%;
+    text-align: center;
+    display: table;
+    
+   
+}
+.ProdutosHome_produtos table td{
+    border: 1px solid black;
+    
+}
+.ProdutosHome_produtos input{
+    margin: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.ProdutosHome_produtos textarea{
+    margin: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.ProdutosHome_produtos table img{
+    position: relative;
+    top: 0;
+    filter: invert(98%) sepia(4%) saturate(118%) hue-rotate(317deg) brightness(118%) contrast(100%);
+    transition: all 0.5s;
+}
+.ProdutosHome_produtos table img:hover{
+    opacity: 0.6;
+  top: -5px;
+}
+.ProdutosHome_produtos table thead tr{
+    background-color: rgb(66, 252, 255);
+}
+.ProdutosHome_produtos table tbody tr{
+    background-color: rgb(125, 125, 125);
+    color: white;
+    
+}
+.ProdutoHome_deletarOverlay{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 5px 5px 0px solid black;
+    
+}
+.ProdutosHome_produtos table tbody td{
+    resize:both; 
+    overflow: auto;
+}
+@include card1(500px, 500px, rgb(0, 76, 255), rgb(0, 195, 255));

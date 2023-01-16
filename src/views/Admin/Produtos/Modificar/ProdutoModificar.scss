@@ -1,9 +1,15 @@
-$name: "ProdutoAdicionar";
+$name: "ProdutoSelecionar";
 @import '../../../../components/styles/boxStyles.scss';
+@import '../../../../components/styles/buttonsStyle.scss';
+@import '../../../../components/styles/inputsStyle.scss';
 .#{$name}_body{
 width: 100vw;
 height: 100vh;
 background-color: white;
+display: flex;
+flex-direction: column;
+
+align-items: center;
 }
 
 
@@ -25,7 +31,44 @@ background-color: white;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        @include button3;
+        @include inputsStyle_2(rgb(160, 160, 160));
+        .inputbox{
+            box-shadow: 2px 2px solid black;
+        }
+        select{
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: rgba(50,50,50, 0.4);
+
+        }
     }
+}
+
+
+.#{$name}_product_box{
+    position: relative;
+    top: 13vh;
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    img{
+        width: 30vw;
+        height: 30vw;
+        background-color: rgba(50,50,50, 0.7);
+    }
+    .#{$name}_product_boxInformacoes{
+        width: 45vw;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
 

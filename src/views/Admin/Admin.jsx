@@ -11,11 +11,11 @@ export default function Admin(props){
     const mapEstado = ()=>{
      switch(estado){
             case 1:
-                return <ProdutosHome setSelectedProduto={setSelectedProduto}/>
+                return <ProdutosHome admin={admin} setEstado={setEstado} setSelectedProduto={setSelectedProduto}/>
             case 2:
                 return <ProdutoAdicionar admin={admin}/>
             case 3:
-                return <ProdutoModificar selectedProduct={selectedProduct} setSelectedProduto={setSelectedProduto}/>
+                return <ProdutoModificar admin={admin} selectedProduct={selectedProduct} setSelectedProduto={setSelectedProduto}/>
         }
     }
     return(
