@@ -4,6 +4,7 @@ import AdminLogin from "./AdminLogin";
 import ProdutoAdicionar from "./Produtos/Adicionar/ProdutoAdicionar";
 import ProdutosHome from "./Produtos/ProdutosHome";
 import ProdutoModificar from "./Produtos/Modificar/ProdutoModificar";
+import UsuariosHome from "./Usuarios/UsuariosHome";
 export default function Admin(props){
     const [admin, setAdmin] = useState(false)
     const [estado, setEstado] = useState(0);
@@ -16,6 +17,9 @@ export default function Admin(props){
                 return <ProdutoAdicionar admin={admin}/>
             case 3:
                 return <ProdutoModificar admin={admin} selectedProduct={selectedProduct} setSelectedProduto={setSelectedProduto}/>
+            case 5:
+                return <UsuariosHome admin={admin} setEstado={setEstado}/>
+
         }
     }
     return(

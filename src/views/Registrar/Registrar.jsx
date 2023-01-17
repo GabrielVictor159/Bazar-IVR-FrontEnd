@@ -25,7 +25,7 @@ export default function Registrar(props) {
             alert('Senha muito pequena, por favor escreva uma senha com pelo menos 7 digitos')
             return false;
         }
-        if(FirstName.length <3 || LastName.length<3){
+        if(FirstName.length <7 || LastName.length<7){
             alert('Nomes Invalidos')
             return false;
         }

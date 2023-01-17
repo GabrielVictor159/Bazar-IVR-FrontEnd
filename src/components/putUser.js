@@ -14,6 +14,7 @@ export default async function putUser(newParameter, type){
     if (a !== null) {
         
         let b = JSON.parse(a)
+        b.SenhaAntiga = a.Senha
         switch (type) {
             case 'FirstName':
                 b.FirstName = newParameter
@@ -39,7 +40,6 @@ export default async function putUser(newParameter, type){
                 b.Telefone = newParameter
                 break;
         }
-
         try{
 
             let resposta;

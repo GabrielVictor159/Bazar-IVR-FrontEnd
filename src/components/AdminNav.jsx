@@ -16,10 +16,7 @@ const AdminNav = (props) => {
         </a>
         <a className="AdminNav_option1">
           <h6 onClick={e=>setEstado(5)}>Usuarios</h6>
-          <div className="AdminNav_dropOptions">
-            <li onClick={e=>setEstado(6)}>Modificar</li>
-            <li onClick={e=>setEstado(7)}>Remover</li>
-          </div>
+          
         </a>
         <a className="AdminNav_option1">
           <h6 onClick={e=>setEstado(9)}>Compras</h6>
