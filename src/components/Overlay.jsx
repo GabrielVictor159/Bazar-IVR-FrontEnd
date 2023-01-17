@@ -1,7 +1,7 @@
 export default function Overlay(props) {
   return (
     <>
-    { props.handler===true
+    { props.handler!==false
         ?
     <div
       style={{
