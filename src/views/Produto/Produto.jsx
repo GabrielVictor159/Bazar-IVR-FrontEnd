@@ -8,6 +8,7 @@ import "./Produto.css"
 import Book from "../../assets/book.png"
 import Cesta from "../../components/Cesta";
 import Keys from "../../../Keys";
+import Foooter from "../../components/Foooter";
 export default function Produto(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     let { id } = useParams();
@@ -36,7 +37,9 @@ export default function Produto(props){
       setCestaVisible(!CestaVisible)
       
     }
-    
+    function Comprar(){
+      window.location=`/FinalizarCompra/${id}`
+    }
     function AddCesta(){
       function findId(array,id){
        
@@ -111,7 +114,7 @@ export default function Produto(props){
                 <p className="Quantidade">{`Quantidade disponivel: ${produto.Quantidade}`}</p>
                 </div>
                 <div className="ButtonBox">
-                <div className="Button" style={{backgroundColor:'#00AECD'}}>
+                <div className="Button" style={{backgroundColor:'#00AECD'}} onClick={Comprar}>
                 <h6 style={{color:'white', fontSize:20}}>
                 {'Comprar'}
                 </h6>
@@ -135,9 +138,7 @@ export default function Produto(props){
             <p>{`   ${produto.Descricao}`}</p>
             </div>
           </div>
-          <footer>
-            
-          </footer>
+          <Foooter />
           <Cesta atualizar={atualizar} setAtualizar={setAtualizar} width={windowSize.current[0]} CestaVisible={CestaVisible}/>
           
         </>

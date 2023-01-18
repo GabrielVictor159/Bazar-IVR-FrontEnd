@@ -8,6 +8,7 @@ import UsuarioItemInformacao from "../../components/UsuarioItemInformacao";
 import "./Usuario.css";
 import list from "../../assets/to-do-list.png";
 import Keys from "../../../Keys";
+import Foooter from "../../components/Foooter";
 export default function Usuario(props) {
   const [usuario, setUsuario] = useState(getUser());
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -242,7 +243,7 @@ export default function Usuario(props) {
       <br />
       <br />
       <br />
-      <footer></footer>
+      <Foooter />
       <Cesta
         atualizar={atualizar}
         setAtualizar={setAtualizar}

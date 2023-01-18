@@ -4,6 +4,7 @@ import Keys from '../../../Keys';
 import NavbarBazar from '../../components/navbarBazar';
 import "./FinalizarCompra.css"
 import bag from "../../assets/shoppingcart.png"
+import { useParams } from 'react-router-dom';
 export default function FinalizarCompra() {
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [atualizar, setAtualizar] = useState(0)
@@ -15,7 +16,26 @@ export default function FinalizarCompra() {
     const [estado, setEstado] = useState('');
     const [numero, setNumero] = useState('');
     const [estadoInput, setEstadoInput] = useState('');
-
+    const [produto, setProduto] = useState(false)
+    let { id } = useParams();
+    
+    useLayoutEffect(()=>{
+      if(id!==null){
+        fetch(`${Keys.backEnd}Produtos/${id}`)
+        .then((response)=>response.json())
+        .then((data)=>setProduto([
+            {
+                idProduto:data.idProduto,
+                Nome:data.Nome,
+                Descricao:data.Descricao,
+                Quantidade: 1,
+                Valor:data.Valor,
+                LinkImage:data.LinkImage
+            }
+        ]
+        ))
+      }
+    },[])
     function realizarPagamento() {
         console.log('teste')
         let a = JSON.parse(localStorage.getItem('usuario'))
@@ -25,13 +45,19 @@ export default function FinalizarCompra() {
                 window.location = "/Login"
             }
         }
-        let b = JSON.parse(localStorage.getItem('Cesta'))
+        let b;
+        if(produto===false){
+        b = JSON.parse(localStorage.getItem('Cesta'))
         if (b === null) {
             b = JSON.parse(sessionStorage.getItem('Cesta'))
             if (b == null) {
                 window.location = "/"
             }
         }
+    }
+             else{
+         b = produto
+             }
 
         if (rua === '') {
             console.log('Parou em rua')
@@ -126,11 +152,18 @@ export default function FinalizarCompra() {
     }
     }
     function mapItens() {
+        console.log(id);
+        let a = produto;
+        if(produto===false){
         if (localStorage.getItem('Cesta') !== null) {
-            let a = JSON.parse(localStorage.getItem('Cesta'))
+            a = JSON.parse(localStorage.getItem('Cesta'))
+        }
+            }
+        console.log(a)
             return a.map((value, index) => {
                 return (
-                    <>
+    
+                 
                         <div key={index} className='CestaItem'>
                             <div className="CestaItemImageContainer">
                                 <img className="CestaItemImage" src={value.LinkImage} />
@@ -140,14 +173,18 @@ export default function FinalizarCompra() {
                                 
                                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                                     <h6>{`Quantidade: `}</h6>
+                                    {produto===false?
                                     <div style={{ width: 40, height: 20, display: 'flex', flexDirection: 'row', alignItems: 'center', textAlign: 'center' }}>
                                         <h6 onClick={e => alterarQuantidade(index, "-")} style={{ fontSize: 70, position: 'relative', top: -5, left: 0 , cursor:'pointer'}} className={'NegativeSymbol'}>{'-'}</h6>
                                     </div>
+                                    :<></>}
                                     <h6 >{` ${value.Quantidade}`}</h6>
+                                    {produto===false?
                                     <div style={{ width: 40, height: 20, display: 'flex', flexDirection: 'row', alignItems: 'center', textAlign: 'center' }}>
                                         <h6 onClick={e => alterarQuantidade(index, "+")} style={{ fontSize: 45, position: 'relative', top: 0, left: 10 , cursor:'pointer'}} className={'PositiveSymbol'}>{'+'}</h6>
                                     </div>
-
+                                    :<></>
+                                    }
                                 </div>
                                 
                                 <h6>{`Valor Total: R$ ${value.Valor * value.Quantidade}`}</h6>
@@ -156,16 +193,14 @@ export default function FinalizarCompra() {
                                 <p>{`${value.Descricao}`}</p>
                             </div>
                             </div>
-                            
+                            <br />     
                         </div>
-                        <br />
-                    </>
+                       
+      
                 )
             })
-        }
-        else {
-            return <></>
-        }
+        
+       
     }
     return (
         <>

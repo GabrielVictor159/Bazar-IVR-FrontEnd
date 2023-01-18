@@ -105,7 +105,7 @@ const NavbarBazar = (props) =>{
         <div className='nav3Div' style={{flexDirection:'row', display:'flex'}}>
         <a className={props.active==='Home'?'active':'inactive'} style={{textAlign:'center'}} href={'/'}>
           <h3>
-          Home
+          Inicio
           </h3>
         </a>
         <p></p>

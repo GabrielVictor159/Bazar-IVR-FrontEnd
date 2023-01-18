@@ -35,6 +35,7 @@ function App() {
     <Route path='/RedefinirSenha/:email/:senha' element={<RedefinirSenha />}/>
     <Route path='/RedefinirSenhaSucesso' element={<RedefinirSenhaSucesso />}/>
     <Route path='/FinalizarCompra' element={<FinalizarCompra />}/>
+    <Route path='/FinalizarCompra/:id' element={<FinalizarCompra />}/>
     <Route path='/Compra/:id' element={<Compra />}/>
     <Route path='/admin' element={<Admin />}/>
   </Routes>

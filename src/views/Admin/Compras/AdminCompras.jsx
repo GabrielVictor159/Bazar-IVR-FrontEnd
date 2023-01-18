@@ -204,6 +204,15 @@ export default function AdminCompras(props) {
                     onClick={(e) => setEstornar(index)}
                   />
               </td>
+              <td>
+              <img
+                    style={{ cursor: "pointer" }}
+                    width={25}
+                    height={25}
+                    onClick={(e) => { props.setEstado(7);props.setSelectedCompra(value.idCompra)}}
+                    src={searcha}
+                  />
+              </td>
             </tr>
           );
         });
@@ -316,6 +325,7 @@ export default function AdminCompras(props) {
                     <></>
                   )}
                 </td>
+                <td />
                 <td />
               </tr>
             </thead>

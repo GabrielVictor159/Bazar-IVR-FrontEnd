@@ -1,0 +1,12 @@
+.footer_navegation_options p{
+    transition: all 0.5s;
+    cursor: pointer;
+    border-bottom:1px solid rgba(white, 0.3);
+    position: relative;
+    top: 0px;
+}
+.footer_navegation_options p:hover{
+    color: rgb(95, 207, 230);
+    top: -5px;
+    border-bottom:1px solid rgba(95, 207, 230, 0.3);
+}

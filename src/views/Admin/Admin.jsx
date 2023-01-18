@@ -6,10 +6,12 @@ import ProdutosHome from "./Produtos/ProdutosHome";
 import ProdutoModificar from "./Produtos/Modificar/ProdutoModificar";
 import UsuariosHome from "./Usuarios/UsuariosHome";
 import AdminCompras from "./Compras/AdminCompras";
+import AdminCompra from "./Compras/AdminCompra";
 export default function Admin(props){
     const [admin, setAdmin] = useState(false)
     const [estado, setEstado] = useState(1);
     const [selectedProduct, setSelectedProduto] = useState(false);
+    const [selectedCompra, setSelectedCompra] = useState(false);
     const mapEstado = ()=>{
      switch(estado){
             case 1:
@@ -21,7 +23,9 @@ export default function Admin(props){
             case 5:
                 return <UsuariosHome admin={admin} setEstado={setEstado}/>
             case 6:
-                return <AdminCompras admin={admin}/>
+                return <AdminCompras setEstado={setEstado} setSelectedCompra={setSelectedCompra} admin={admin}/>
+            case 7:
+                return <AdminCompra id={selectedCompra}/>
 
         }
     }

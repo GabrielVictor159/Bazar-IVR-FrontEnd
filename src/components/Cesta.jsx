@@ -63,21 +63,16 @@ export default function Cesta(props) {
                             <div className="CestaItemImageContainer">
                                 <img className="CestaItemImage" src={value.LinkImage} />
                             </div>
-                            <div className="CestaItemDescricaoContainer">
-                            <h6>{`Nome do Produto: ${value.Nome}`}</h6>
-                                
-                                <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                    <h6>{`Quantidade: `}</h6>
-                                    <div style={{ width: 40, height: 20, display: 'flex', flexDirection: 'row', alignItems: 'center', textAlign: 'center' }}>
-                                        <h6 onClick={e => alterarQuantidade(index, "-")} style={{ fontSize: 70, position: 'relative', top: -5, left: 0 , cursor:'pointer'}} className={'NegativeSymbol'}>{'-'}</h6>
-                                    </div>
-                                    <h6 >{` ${value.Quantidade}`}</h6>
-                                    <div style={{ width: 40, height: 20, display: 'flex', flexDirection: 'row', alignItems: 'center', textAlign: 'center' }}>
-                                        <h6 onClick={e => alterarQuantidade(index, "+")} style={{ fontSize: 45, position: 'relative', top: 0, left: 10 , cursor:'pointer'}} className={'PositiveSymbol'}>{'+'}</h6>
-                                    </div>
-                                </div>
-                                
-                                <h6>{`Valor Total: R$ ${value.Valor * value.Quantidade}`}</h6>
+                            <div style={{width:'70%',height:90, display:'flex', flexDirection:'column',alignItems:'flex-start', justifyContent:'space-around'}}>
+                            <h6>{`Nome Produto: ${value.Nome}`}</h6>
+                            <div style={{display:'flex', flexDirection:'row', alignItems:'center', height:'20%'}}>
+                            <h6>{'Quantidade: '}</h6>
+                            <h6 onClick={e=>alterarQuantidade(index, '-')} style={{fontSize:50,color:'rgb(39, 166, 189)', cursor:'pointer'}}>{`-`}</h6>
+                            <h6>{value.Quantidade}</h6>
+                            <h6 onClick={e=>alterarQuantidade(index, '+')} style={{fontSize:30,color:'rgb(39, 166, 189)', cursor:'pointer'}}>{`+`}</h6>
+                            </div>
+                     
+                            <h6>{`Valor: ${value.Valor}`}</h6>
                             </div>
                             <br />
                         </div>

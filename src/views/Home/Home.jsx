@@ -11,6 +11,7 @@ import Produtos from '../../components/Produtos';
 import getUser from '../../components/getUser';
 import Cesta from '../../components/Cesta';
 import Keys from '../../../Keys';
+import Foooter from '../../components/Foooter';
 export default function Home(props) {
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   let [listProdutos, setListProdutos] = useState();
@@ -165,9 +166,7 @@ export default function Home(props) {
       <br />
       <br />
       <br />
-        <footer>
-
-        </footer>
+        <Foooter />
 
       <Cesta atualizar={atualizar} setAtualizar={setAtualizar} width={windowSize.current[0]} CestaVisible={CestaVisible}/>
     </>
