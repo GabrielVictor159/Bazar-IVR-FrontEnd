@@ -14,7 +14,6 @@ import RedefinirSenha from './views/EsqueceuSenha/RedefinirSenha/RedefinirSenha'
 import RedefinirSenhaSucesso from './views/EsqueceuSenha/RedefinirSenha/RedefinirSenhaSucesso/RedefinirSenhaSucesso';
 import FinalizarCompra from './views/FinalizarCompra/FinalizarCompra';
 import Compra from './views/Compra/Compra';
-import TestComponent from './views/Compra/TestComponent';
 import AdminLogin from './views/Admin/AdminLogin';
 import Admin from './views/Admin/Admin';
 function App() {

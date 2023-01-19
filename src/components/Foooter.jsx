@@ -2,7 +2,8 @@ import React from "react";
 import "./Foooter.scss";
 export default function Foooter(props){
     return(
-        <footer >
+  
+             <footer id={`${props.id}`}>
             <div style={{width:'95%', height:'100%',display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center'}}>
                 <div className="footer_navegation_options" style={{display:'flex', flexDirection:'row', width:'30%', justifyContent:'space-around', color:'white'}}>
                     <p onClick={e=>window.location="/"}>Inicio</p>
@@ -14,5 +15,6 @@ export default function Foooter(props){
             </div>
             
         </footer>
+
     );
 }

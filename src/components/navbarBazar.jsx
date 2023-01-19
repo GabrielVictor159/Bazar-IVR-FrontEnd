@@ -24,7 +24,7 @@ const NavbarBazar = (props) =>{
  }
   return (
     <>
-    <div className='NavContainer'>
+    <div id={props.id} className='NavContainer'>
       <nav style={{ width: '100%', height: props.height*0.05, backgroundColor: '#575757', position: 'relative', top: 0, left: 0, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', overflow: 'visible' }}>
         <a style={{
           flexDirection: 'row', display: 'flex', alignItems: 'center', left: -30,

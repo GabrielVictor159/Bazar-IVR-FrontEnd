@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import Keys from "../../../../../Keys";
 import ProdutoAdicionar from "../Adicionar/ProdutoAdicionar";
 import "./ProdutoModificar.scss";
+import { ToastContainer, toast } from "react-toastify";
 const name = "ProdutoSelecionar";
 export default function ProdutoSelecionar(props) {
   const [produto, setProduto] = useState("");
@@ -41,10 +42,10 @@ export default function ProdutoSelecionar(props) {
             .then((a) => a.json())
             .then((data) => setProduto(data));
         } else {
-          alert("esse produto não existe");
+          toast("esse produto não existe");
         }
       } else {
-        alert("esse produto não existe");
+        toast("esse produto não existe");
       }
     };
     return (
@@ -100,6 +101,7 @@ function productView(produto, admin) {
         </div>
       </div>
       <ProdutoAdicionar produto={produto} modificar={"true"} admin={admin} />
+      <ToastContainer />
     </>
   );
 }

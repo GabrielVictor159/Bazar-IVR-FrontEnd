@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Keys from "../../../Keys";
-import "./EsqueceuSenha.css"
+import "./EsqueceuSenha.css";
+import { ToastContainer, toast } from "react-toastify";
 export default function EsqueceuSenha(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [Email, setEmail] = useState('');
@@ -9,7 +10,7 @@ export default function EsqueceuSenha(props){
     }, [])
     const enviarSolicitacao=async()=>{
         if(Email == ''){
-            alert("Por favor insira um email")
+            toast("Por favor insira um email")
             return false
         }
         let resposta;
@@ -26,14 +27,14 @@ export default function EsqueceuSenha(props){
           status = res.status
           if(status === 200){
           if(resposta === 'Não existe um usuario com esse email'){
-            alert('Não existe um usuario com esse email')
+            toast('Não existe um usuario com esse email')
           }
           else{
             window.location=`/EsqueceuSenhaSucesso`
           }
         }
         else{
-            alert('Houve algum erro')
+            toast('Houve algum erro')
         }
     }
     return(
@@ -45,6 +46,7 @@ export default function EsqueceuSenha(props){
         <button className="ButtonEnviarEsqueceuSenha" onClick={enviarSolicitacao}>Enviar</button>
         </div>
          </div>
+         <ToastContainer />
         </>
     );
 }

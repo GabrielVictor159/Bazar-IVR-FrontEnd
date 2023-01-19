@@ -1,4 +1,6 @@
+@import "../../components/styles/animationStyles.scss";
 .UsuarioContainerInformacoes{
+    opacity: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -12,6 +14,10 @@
     border-bottom-width: 2px;
     border-style: solid;
     border-color: black;
+    opacity: 0;
+}
+#Usuario_Nav{
+    opacity: 0;
 }
 .UsuarioTituloContainer{
     width: 100%;
@@ -64,6 +70,8 @@
     align-items: center;
     background-color: white;
     box-shadow: 0px 15px 0px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    opacity: 0;
 }
 .UsuarioComprasTituloContainer{
     width: 100%;
@@ -72,6 +80,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
     
 }
 .UsuarioComprasTituloText{
@@ -83,6 +92,7 @@
     max-height: 57%;
     overflow-y: hidden;
     transition: all 0.5s;
+    opacity: 0;
 }
 .UsuarioTableCompras:hover{
     overflow-y: scroll;

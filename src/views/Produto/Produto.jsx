@@ -4,17 +4,19 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useRef } from 'react';
 import { useParams } from "react-router-dom";
 import NavbarBazar from '../../components/navbarBazar';
-import "./Produto.css"
+import "./Produto.scss"
 import Book from "../../assets/book.png"
 import Cesta from "../../components/Cesta";
 import Keys from "../../../Keys";
 import Foooter from "../../components/Foooter";
+import AnimationIntersection from "../../components/AnimationIntersection";
 export default function Produto(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     let { id } = useParams();
     const [produto, setProduto] = useState('');
     const [CestaVisible, setCestaVisible] = useState(true);
     const [atualizar, setAtualizar] = useState(0);
+    const animationIntersection = new AnimationIntersection();
     useEffect( ()=>{
       
         fetch(`${Keys.backEnd}/Produtos/${id}`)
@@ -24,6 +26,38 @@ export default function Produto(props){
      
   
     },[])
+    useEffect(()=>{
+      if(produto!==''){
+        const a = [
+          {
+            name:"Produto_Nav",
+            animationName:"topSurge"
+          },
+          {
+            name:"Produto_Box_Image",
+            animationName:"leftSurge"
+          },
+          {
+            name:"Produto_Box_Informacoes",
+            animationName:"rightSurge"
+          },
+          {
+            name:"Produto_Box_Titulo_Descricao",
+            animationName:"leftSurge"
+          },
+          {
+            name:"Produto_Box_Text_Descricao",
+            animationName:"bottomSurge"
+          },
+          {
+            name:"Produto_Footer",
+            animationName:"leftSurge"
+          },
+        ]
+        animationIntersection.oberseve(a)
+      }
+      return ()=>animationIntersection.oberseve([],true)
+    },[produto])
     function handleCesta (){
   
       if(CestaVisible){
@@ -103,12 +137,12 @@ export default function Produto(props){
     }
     return(
         <>
-          <NavbarBazar handleCesta={handleCesta} width={windowSize.current[0]} height={windowSize.current[1]} />
+          <NavbarBazar id={"Produto_Nav"} handleCesta={handleCesta} width={windowSize.current[0]} height={windowSize.current[1]} />
           <div className="BoxProduto">
-                <div className="BoxImage" >
+                <div id="Produto_Box_Image" className="BoxImage" >
                 <img className="ImageProduto" src={produto.LinkImage}/>
                 </div>
-                <div className="BoxInformacoes">
+                <div id="Produto_Box_Informacoes" className="BoxInformacoes">
                 <div className="TextBox">
                 <h6 className="Valor">{`R$ ${produto.Valor}`}</h6>
                 <p className="Quantidade">{`Quantidade disponivel: ${produto.Quantidade}`}</p>
@@ -130,15 +164,15 @@ export default function Produto(props){
           <br /><br />
           <div style={{width:'100%', height:70, backgroundColor:'#D9D9D9'}}/>
           <div className="BoxDescricao">
-            <div className="BoxTituloDescricao">
+            <div  id={"Produto_Box_Titulo_Descricao"} className="BoxTituloDescricao">
             <img className="bookImage" src={Book}/>
             <h6 className="TituloDescricao">{'Descrição do Produto'}</h6>
             </div>
-            <div  className="BoxTextDescricao">
+            <div id="Produto_Box_Text_Descricao"  className="BoxTextDescricao">
             <p>{`   ${produto.Descricao}`}</p>
             </div>
           </div>
-          <Foooter />
+          <Foooter id={"Produto_Footer"} />
           <Cesta atualizar={atualizar} setAtualizar={setAtualizar} width={windowSize.current[0]} CestaVisible={CestaVisible}/>
           
         </>

@@ -1,0 +1,44 @@
+$name:"ImagesInstituto";
+
+.#{$name}_body{
+    width: 100%;
+    position: relative;
+    top: 20vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .#{$name}_container{
+        padding-bottom: 40px;
+        width: 80%;
+        display: grid;
+        flex-direction: row;
+        grid-template-columns: repeat(3, 0px);
+        position: relative;
+        gap: 40px;
+        justify-content: space-around;
+        opacity: 1;
+        img{
+            width: 300px;
+            height: 300px;
+            background-color: rgba(#1f1f1f, 1.0);
+            object-fit:cover;
+            transform: translateX(-50%);
+            position: relative;
+            top: 0px;
+            transition: all 0.5s;
+            border: 5px solid rgb(53, 53, 53);
+            box-shadow: 15px 15px 0px rgba(53, 53, 53, 0.7);
+
+            cursor: pointer;
+            &:hover{
+                top: -10px;
+                content: url("../../../assets/icons8-close-96.png");
+                object-fit:contain;
+                box-shadow: 20px 20px 0px rgba(53, 53, 53, 0.7);
+            }
+        }
+    }
+   
+    
+}

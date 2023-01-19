@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Keys from "../../../Keys";
 import "./Registrar.css"
+import { ToastContainer, toast } from "react-toastify";
 export default function Registrar(props) {
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [FirstName, setFirstName] = useState('');
@@ -18,19 +19,19 @@ export default function Registrar(props) {
 
     const sendSolicitacao = async ()=>{
         if(Password !== ConfirmPassword){
-            alert('Senha diferentes')
+           toast('Senha diferentes')
             return false;
         }
         if(Password.length <7){
-            alert('Senha muito pequena, por favor escreva uma senha com pelo menos 7 digitos')
+           toast('Senha muito pequena, por favor escreva uma senha com pelo menos 7 digitos')
             return false;
         }
         if(FirstName.length <7 || LastName.length<7){
-            alert('Nomes Invalidos')
+           toast('Nomes Invalidos')
             return false;
         }
         if(Endereco.length <7){
-            alert('Endereço invalido')
+           toast('Endereço invalido')
             return false;
         }
         let dataAtual = new Date()
@@ -63,7 +64,7 @@ export default function Registrar(props) {
           const respostaTexto = await response.text()
 
           if(respostaTexto!="Sucesso"){
-            alert(respostaTexto)
+            toast(respostaTexto)
           }
           else{
             window.location=`/SucessoRegistrar`
@@ -102,6 +103,7 @@ export default function Registrar(props) {
                     <br />
                 </div>
             </div>
+            <ToastContainer />
         </>
     );
 }

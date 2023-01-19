@@ -7,6 +7,8 @@ import ProdutoModificar from "./Produtos/Modificar/ProdutoModificar";
 import UsuariosHome from "./Usuarios/UsuariosHome";
 import AdminCompras from "./Compras/AdminCompras";
 import AdminCompra from "./Compras/AdminCompra";
+import ImagesInstituto from "./ImagesInstituto/ImagesInstituto";
+import ImagesInstitutoAdicionar from "./ImagesInstituto/Adicionar/ImagesInstitutoAdicionar";
 export default function Admin(props){
     const [admin, setAdmin] = useState(false)
     const [estado, setEstado] = useState(1);
@@ -17,7 +19,7 @@ export default function Admin(props){
             case 1:
                 return <ProdutosHome admin={admin} setEstado={setEstado} setSelectedProduto={setSelectedProduto}/>
             case 2:
-                return <ProdutoAdicionar admin={admin}/>
+                return <ProdutoAdicionar setEstado={setEstado} admin={admin}/>
             case 3:
                 return <ProdutoModificar admin={admin} selectedProduct={selectedProduct} setSelectedProduto={setSelectedProduto}/>
             case 5:
@@ -26,6 +28,10 @@ export default function Admin(props){
                 return <AdminCompras setEstado={setEstado} setSelectedCompra={setSelectedCompra} admin={admin}/>
             case 7:
                 return <AdminCompra id={selectedCompra}/>
+            case 8:
+                return <ImagesInstituto admin={admin}/>
+            case 9:
+                return <ImagesInstitutoAdicionar admin={admin}/>
 
         }
     }

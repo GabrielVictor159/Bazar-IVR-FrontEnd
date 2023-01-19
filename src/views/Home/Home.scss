@@ -1,3 +1,4 @@
+@import "../../components/styles/animationStyles.scss";
 .slideContainer {
     width: 100%; 
     left: 0;
@@ -61,8 +62,7 @@
     position: relative;
     gap: 40px;
     overflow:hidden;
-    
-    
+    opacity: 1;
 }
 .produtoItem{
     margin: auto;
@@ -76,10 +76,18 @@
     box-shadow: 8px 8px 2px rgb(150, 150, 150);
     transition: all 0.5s;
     cursor: pointer;
+    opacity: 0;
 }
 .produtoItem:hover{
     top: 5px;
     box-shadow: 12px 12px 4px rgb(150, 150, 150);
+}
+#Home_Carousel_container{
+    position: relative;
+    opacity: 0;
+    top: 0;
+    width: 100%;
+    
 }
 .containerNavegation{
     width: 100%;

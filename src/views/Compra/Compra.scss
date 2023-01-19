@@ -1,3 +1,4 @@
+@import "../../components/styles/animationStyles.scss";
 .Compra_Informacoes_Container{
     width: 80%;
     height: 800px;
@@ -7,7 +8,16 @@
     flex-direction: column;
     align-items: center;
     box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    opacity: 0;
 }
+#Compra_Nav{
+    opacity: 0;
+}
+#Compra_Footer{
+    opacity: 0;
+}
+
 .Compra_Body{
     display: flex;
     flex-direction: column;
@@ -25,6 +35,7 @@
     font-size: 20px;
 }
 .Compra_Texts_Container{
+    transition: all 0.5s;
 width: 93%;
 }
 .Compra_Status_Container{

@@ -137,16 +137,17 @@ export default function ProdutoAdicionar(props) {
       },
       body: JSON.stringify(otherData),
     })
-      .then((response) => response.json())
+      .then((response) => response.text())
       .then((data) => {
-        toast(data);
+        toast("Produto Adicionado");
+        props.setEstado(1)
       })
       .catch((error) => {
         console.error("Error:", error);
       });
     }
     else{
-     alert("o nome não pode ser nulo")
+     toast("o nome não pode ser nulo")
     }
   }
   return (
@@ -216,6 +217,7 @@ export default function ProdutoAdicionar(props) {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

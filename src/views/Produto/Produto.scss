@@ -1,4 +1,4 @@
-
+@import "../../components/styles/animationStyles.scss";
 
 .BoxProduto{
     width: 100%;
@@ -9,11 +9,17 @@
     justify-content:space-evenly;
     align-items: center;
 }
-
+#Produto_Nav{
+    opacity: 0;
+}
+#Produto_Footer{
+    opacity: 0;
+}
 .BoxImage{
     width: 400px;
     height: 400px;
     background-color: #D9D9D9;
+    opacity: 0;
 }
 .ImageProduto{
     width: 100%;
@@ -27,6 +33,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    opacity: 0;
 }
 .TextBox{
     width: 100%;
@@ -84,6 +91,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    opacity: 0;
    
 
 }
@@ -100,7 +108,7 @@
     width: 80%;
     position: relative;
     top: 20px;
-    
+    opacity: 0;
 
 }
 

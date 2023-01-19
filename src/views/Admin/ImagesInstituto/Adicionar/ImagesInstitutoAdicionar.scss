@@ -1,0 +1,72 @@
+$name :"ImagesInstitutoAdicionar";
+@import '../../../../components/styles/layout.scss';
+.#{$name}_body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 10vh;
+
+    .#{$name}_container{
+        width: 80%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .#{$name}_box {
+            width: 80%;
+            height: 90vh;
+            position: relative;
+            top: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            
+           
+        }
+}
+}
+.#{$name}_ImageBox {
+    $widthImage: 20vw;
+    $heightImage: 20vw;
+    width: $widthImage;
+    height: $heightImage;
+    background-image: url("../../../../assets/icons8-add-image-90.png");
+    background-size:inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+     overflow: hidden;
+    background-color: rgb(53, 53, 53);
+    box-shadow: 15px 15px 0px  rgba(30,30,30,0.5);
+    border: 4px solid rgba(30,30,30,0.5);
+    overflow: hidden;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    
+
+    .#{$name}imagePreview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s;
+    }
+
+    input {
+        display:none;
+    }
+    .#{$name}_ImageBox_hover{
+        transition: all 0.5s;
+    }
+    &:hover {
+        .#{$name}_ImageBox_hover{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30,30,30,0.5);
+        }
+    }
+}

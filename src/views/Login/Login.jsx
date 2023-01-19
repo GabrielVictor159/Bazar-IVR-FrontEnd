@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import Logar from "../../components/logar";
 import './Login.css'
+import 'react-toastify/dist/ReactToastify.css';
 export default function Login(props) {
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [Email, setEmail] = useState('');
@@ -10,11 +12,12 @@ export default function Login(props) {
         document.body.style.background = 'linear-gradient(90deg, #0071DA 0%, #73FDFD 100%)'
     }, [])
     const logar =async()=>{
+      
        const log = await Logar(Email, password, Lembrar)
        log === 'Sucesso'
        ?window.location='/'
-       :alert(log)
-    
+       :toast(log)
+      
     }
     const handleLembrar=()=>{
 
@@ -54,7 +57,7 @@ export default function Login(props) {
                 <br />
                 </div>
             </div>
-
+            <ToastContainer />
         </>
     );
 }

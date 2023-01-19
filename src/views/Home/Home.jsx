@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useRef } from 'react';
-import "./Home.css"
+import "./Home.scss"
 import NavbarBazar from '../../components/navbarBazar';
 import Carousel from 'react-bootstrap/Carousel';
 import slide1 from '../../assets/slide-01.png'
@@ -15,13 +15,13 @@ import Foooter from '../../components/Foooter';
 export default function Home(props) {
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   let [listProdutos, setListProdutos] = useState();
-  let [produtos, setProdutos] = useState();
+  let [produtos, setProdutos] = useState([]);
   const [index, setIndex] = useState(0);
   const [page, setPage] = useState(1);
   const [size, setSize] = useState(9);
   const [CestaVisible, setCestaVisible] = useState(true);
   const [atualizar, setAtualizar] = useState(0);
-  useEffect(() => {
+  useLayoutEffect(() => {
     fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${index}/${size}`,{
       method:'GET',
       mode:'cors'
@@ -29,10 +29,59 @@ export default function Home(props) {
     .then((response) => response.json())
     .then((data) => setProdutos(data))
     .then((data) => console.log(data))
-  
+    
   },[])
 
+  useEffect(()=>{
+    
+    const intersectionObserver = new IntersectionObserver((entries)=>{
+      if(entries.some((entry)=>entry.isIntersecting===true)){
+        entries.map((value)=>{
+          if(value.isIntersecting){
+            if(value.target.className==="produtoItem"){
+              animation(value.target.id,"produtoItem")
+            }
+            else{
+               animation(value.target.id)
+            }
+          }
+        })
+      }
+      
+    
+    })
+    intersectionObserver.observe(document.getElementById('Home_Carousel_container'));
+    intersectionObserver.observe(document.getElementById('Home_Nav'));
+    intersectionObserver.observe(document.getElementById('Home_Footer'));
+    produtos.map((value, index)=>{
+      intersectionObserver.observe(document.getElementById(`Home_produto_${index}`));
+    })
+    return()=>intersectionObserver.disconnect();
+  },[produtos])
 
+  const animation=(id,className)=>{
+    const a = (properties)=>{
+      document.getElementById(id).style.animation = properties;
+    }
+    if(className==="produtoItem"){
+      a("scale 1s ease-in-out 0s 1 normal forwards");
+    }
+    switch(id){
+      case 'Home_Carousel_container':
+        a("leftSurge 2s ease-in-out 0s 1 normal forwards");
+        break;
+      case "Home_Container_Produtos":
+        a("scale 2s ease-in-out 0s 1 normal forwards");
+        break;
+      case "Home_Nav":
+        a("topSurge 2s ease-in-out 0s 1 normal forwards");
+        break;
+      case "Home_Footer":
+        a("leftSurge 2s ease-in-out 0s 1 normal forwards");
+        break;
+    }
+    
+  }
   function nextPage (){
     const pageN = page +1
     const newIndex = index+ size
@@ -80,7 +129,7 @@ export default function Home(props) {
     try {
     return callback.map((value, index) => {
         return (
-          <div key={index} className='produtoItem' onClick={()=>setProduct(value.idProduto)}>
+          <div  id={`Home_produto_${index}`} key={index} className='produtoItem' onClick={()=>setProduct(value.idProduto)}>
             <Produtos image={value.LinkImage} titulo={value.Nome} valor={value.Valor} />
           </div>
         )
@@ -94,8 +143,8 @@ export default function Home(props) {
 
   return (
     <>
-      <NavbarBazar handleCesta={handleCesta} active={'Home'} width={windowSize.current[0]} height={windowSize.current[1]} />
-      <div style={{ top: windowSize.current[1] * 0.22, width: '100%'}}>
+      <NavbarBazar id={'Home_Nav'} handleCesta={handleCesta} active={'Home'} width={windowSize.current[0]} height={windowSize.current[1]} />
+      <div id='Home_Carousel_container' >
         <Carousel>
           <Carousel.Item>
             <img
@@ -135,7 +184,7 @@ export default function Home(props) {
       <br />
       <br />
       <br />
-      <div className='containerProdutos'>
+      <div la id={'Home_Container_Produtos'} className='containerProdutos'>
         {
            mapProdutos(produtos)
 
@@ -156,7 +205,7 @@ export default function Home(props) {
         :<></>
 }
         <h5>{page}</h5>
-        <div className='NavegationContainer' onClick={nextPage}>
+        <div id='Home_NavegationContainer' className='NavegationContainer' onClick={nextPage}>
           <h5>
             Proximo
           </h5>
@@ -166,7 +215,7 @@ export default function Home(props) {
       <br />
       <br />
       <br />
-        <Foooter />
+        <Foooter id='Home_Footer' />
 
       <Cesta atualizar={atualizar} setAtualizar={setAtualizar} width={windowSize.current[0]} CestaVisible={CestaVisible}/>
     </>

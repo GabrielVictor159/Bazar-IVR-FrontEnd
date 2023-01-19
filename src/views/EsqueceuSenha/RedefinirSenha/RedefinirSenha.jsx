@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import Keys from "../../../../Keys";
+import { ToastContainer, toast } from "react-toastify";
 import "./RedefinirSenha.css"
 export default function RedefinirSenha(props){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -14,7 +15,7 @@ export default function RedefinirSenha(props){
 
     const enviar = async()=>{
         if(NovaSenha !== ConfirmarNovaSenha){
-            alert("Senhas diferentes, por favor verifique as senhas")
+            toast("Senhas diferentes, por favor verifique as senhas")
             return false
         }
         console.log(NovaSenha)
@@ -41,14 +42,14 @@ export default function RedefinirSenha(props){
           status = res.status
           if(status === 200){
             if(resposta === 'Não foi possivel alterar a senha'){
-              alert(resposta)
+              toast(resposta)
             }
             else{
               window.location=`/RedefinirSenhaSucesso`
             }
           }
           else{
-              alert('Houve algum erro')
+              toast('Houve algum erro')
           }
     }
     return (
@@ -65,6 +66,7 @@ export default function RedefinirSenha(props){
         <br />
             </div>
          </div>
+         <ToastContainer />
         </>
     );
 }

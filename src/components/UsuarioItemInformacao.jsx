@@ -7,7 +7,7 @@ export default function UsuarioItemInformacao(props) {
     const [input2, setInput2] = useState('');
     const [input3, setInput3] = useState('');
     return (
-        <div className="UsuarioItemInformacao">
+        <div id={props.id} className="UsuarioItemInformacao">
             <div style={{width:'90%', display: 'flex',left:'3%', flexDirection: 'row', alignItems: 'center', position: 'relative' }}>
                 <h6 className="UsuarioTextInformacoes1">{props.text}</h6>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', position: 'relative', left: 10 }}>
