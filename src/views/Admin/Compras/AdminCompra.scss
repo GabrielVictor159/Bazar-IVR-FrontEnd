@@ -98,3 +98,42 @@ left: 3%;
     flex-direction: row;
     justify-content: flex-end;
 }
+
+.#{$name}_Table_Compras{
+    width: 80%;
+    max-height: 57%;
+    overflow-y: hidden;
+    transition: all 0.5s;
+    opacity: 1;
+}
+.#{$name}_Table_Compras:hover{
+    overflow-y: scroll;
+}
+.#{$name}_Table_Compras table{
+    width: 100%;
+    text-align: center;
+}
+.#{$name}_Table_Compras table tbody tr{
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.#{$name}_Table_Compras table thead tr{
+    background-color: white;
+    font-size: 18px;
+}
+.#{$name}_Table_Compras table button{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    position: relative;
+    top: 0;
+    background-color: rgb(14, 179, 96);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s;
+}
+.#{$name}_Table_Compras table button:hover{
+    top: -5px;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+}

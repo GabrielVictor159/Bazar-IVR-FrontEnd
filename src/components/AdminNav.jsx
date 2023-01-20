@@ -37,6 +37,14 @@ const AdminNav = (props) => {
             <li onClick={e=>setEstado(9)}>Adicionar</li>
           </div>
         </a>
+        <a className="AdminNav_option1">
+        <div style={{width:'100%', height:'100%', display:'flex', justifyContent:'center', alignItems:'center'}} onClick={e=>setEstado(10)}>
+          <h6 >Membros</h6>
+          </div>
+          <div className="AdminNav_dropOptions">
+            <li onClick={e=>setEstado(11)}>Adicionar</li>
+          </div>
+        </a>
       </nav>
     </div>
   );

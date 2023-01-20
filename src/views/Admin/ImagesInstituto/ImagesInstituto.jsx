@@ -36,7 +36,7 @@ export default function ImagesInstituto(props) {
             <div className={`${name}_container`}>
 
                 {mapImages()}
-        <input />
+
 
             </div>
         </div>

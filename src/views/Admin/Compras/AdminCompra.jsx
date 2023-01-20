@@ -95,7 +95,7 @@ export default function AdminCompra(props){
             <label className={`${name}_Texts_text`}>{`${compra.Email}`}</label>
           </div>
           <br/>
-          <div className={"UsuarioTableCompras"} style={{position:'relative', left:'2%', width:'93%', minHeight:'30%'}}>
+          <div className={`${name}_Table_Compras`} style={{position:'relative', left:'2%', width:'93%', minHeight:'30%'}}>
           <table>
             <thead>
               <tr style={{position:'sticky', top:0, zIndex:1}}>

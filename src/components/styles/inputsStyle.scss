@@ -75,6 +75,32 @@
       height: 44px;
     }
   }
+  @mixin inputStyle_3($maxWidth,$height,$inactiveColor, $activeColor){
+    .input {
+      max-width: $maxWidth;
+      height: $height;
+      border: 2px solid transparent;
+      outline: none;
+      border-bottom: 2px solid $inactiveColor;
+      caret-color: $inactiveColor;
+      background-color: transparent;
+      padding: 5px;
+      transition: .5s linear;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+    
+    .input:focus {
+      border: 2px solid $activeColor;
+      caret-color: $activeColor;
+      color: $activeColor;
+      box-shadow: 4px 4px 10px #070707;
+    }
+    
+    .input:focus::placeholder {
+      color: $activeColor;
+    }
+  }
   @keyframes justshake {
     25% {
       transform: translateX(5px);

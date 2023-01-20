@@ -9,6 +9,7 @@ import AdminCompras from "./Compras/AdminCompras";
 import AdminCompra from "./Compras/AdminCompra";
 import ImagesInstituto from "./ImagesInstituto/ImagesInstituto";
 import ImagesInstitutoAdicionar from "./ImagesInstituto/Adicionar/ImagesInstitutoAdicionar";
+import AdicionarMembro from "./Membros/Adicionar/AdicionarMembro";
 export default function Admin(props){
     const [admin, setAdmin] = useState(false)
     const [estado, setEstado] = useState(1);
@@ -32,6 +33,8 @@ export default function Admin(props){
                 return <ImagesInstituto admin={admin}/>
             case 9:
                 return <ImagesInstitutoAdicionar admin={admin}/>
+            case 11: 
+                return <AdicionarMembro setEstado={setEstado} admin={admin}/>
 
         }
     }
