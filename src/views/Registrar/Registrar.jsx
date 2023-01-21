@@ -48,7 +48,7 @@ export default function Registrar(props) {
             Email: Email,
             Telefone:Telefone
         }
-        const response = await fetch(`${Keys.backEnd}/CadastrarSolicitacao`, {
+        const response = await fetch(`${Keys.backEnd}CadastrarSolicitacao`, {
             method: 'POST', 
             mode: 'cors', 
             cache: 'no-cache', 

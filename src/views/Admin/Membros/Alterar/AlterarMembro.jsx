@@ -1,22 +1,25 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import Keys from "../../../../../Keys";
-import "./AdicionarMembro.scss";
 import axios from "axios";
-const name = "AdicionarMembro";
-export default function AdicionarMembro(props) {
+import "./AlterarMembro.scss"
+import Membro from "../../../../components/Membro";
+const name ="AlterarMembro"
+export default function AlterarMembro(props) {
     const [selectedFile, setSelectedFile] = useState();
     const [preview, setPreview] = useState();
-    const [imageName, setImageName] = useState("");
+    const [imageName, setImageName] = useState(undefined);
     const [nome, setNome] = useState(undefined);
     const [titulo, setTitulo] = useState(undefined);
     const [descricao, setDescricao] = useState(undefined);
-    const [facebook, setFacebook] = useState(undefined);
-    const [instagram, setInstagram] = useState(undefined);
-    const [twitter, setTwitter] = useState(undefined);
-    const [tiktok, setTiktok] = useState(undefined);
-    const [linkedin, setLinkedin] = useState(undefined);
-    const [youtube, setYoutube] = useState(undefined);
+    const [facebook, setFacebook] = useState(null);
+    const [instagram, setInstagram] = useState(null);
+    const [twitter, setTwitter] = useState(null);
+    const [tiktok, setTiktok] = useState(null);
+    const [linkedin, setLinkedin] = useState(null);
+    const [youtube, setYoutube] = useState(null);
+    const [membro, setMembro] = useState("");
+    const [atualizacoes, setAtualizacoes] = useState(0)
     useLayoutEffect(()=>{
         document.body.style.background ="white"
     },[]);
@@ -32,11 +35,18 @@ export default function AdicionarMembro(props) {
         // free memory when ever this component is unmounted
         return () => URL.revokeObjectURL(objectUrl);
       }, [selectedFile]);
-    
+      useEffect(()=>{
+        mapMembro()
+      },[])
+      const mapMembro = ()=>{
+        fetch(`${Keys.backEnd}Membros/${props.selectedMembro.idMembro}`)
+        .then((res)=>res.json())
+        .then((data)=>setMembro(data))
+      }
       const onSelectFile = (e) => {
         if (!e.target.files || e.target.files.length === 0) {
           setSelectedFile(undefined);
-          setImageName("");
+          setImageName(undefined);
           return;
         }
     
@@ -47,7 +57,27 @@ export default function AdicionarMembro(props) {
         document.getElementById("ImageInput").click();
         
       };
-      const adicionarMembros = async()=>{
+      const excluirMembro = async()=>{
+        fetch(`${Keys.backEnd}Membros/${props.admin.nome}/${props.admin.senha}/${props.selectedMembro.idMembro}`, {
+            method: "DELETE",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if(data.message === 'Membro deletado com sucesso'){
+                props.setEstado(10)
+              }
+              else{
+                toast(data.message)
+              }
+            })
+            .catch((error) => {
+              toast("Error:", error);
+            });
+      }
+      const alterarMembros = async()=>{
         if(selectedFile!==undefined){
             const formData = new FormData();
             formData.append("image", selectedFile);
@@ -77,27 +107,35 @@ export default function AdicionarMembro(props) {
               Youtube:youtube,
               TikTok:tiktok,
               Linkedin:linkedin,
-              NomeImage: imageName===""?undefined:imageName,
+              NomeImage: imageName
             };
-           fetch(`${Keys.backEnd}Membros/${props.admin.nome}/${props.admin.senha}`, {
-              method: "POST",
+           fetch(`${Keys.backEnd}Membros/${props.admin.nome}/${props.admin.senha}/${props.selectedMembro.idMembro}`, {
+              method: "PUT",
               headers: {
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify(otherData),
             })
-              .then((response) => response.text())
+              .then((response) => response.json())
               .then((data) => {
-                toast(data);
+                toast(data.message);
+                mapMembro();
               })
               .catch((error) => {
                 toast("Error:", error);
               });
+
+            
             }
+
       }
-  return (
-    <div className={`${name}_body`}>
-      <div className={`${name}_box`}>
+    return (
+        <div className={`${name}_body`}>
+            <div className={`${name}_box_informacoes`}>
+            <Membro Membro={membro} width={500} height={500}/>
+            </div>
+            <br /><br /><br />
+             <div className={`${name}_box`}>
       <div className={`${name}_ImageBox`} onClick={focusImageInput}>
           <div className={`${name}_ImageBox_hover`}/>
           <form
@@ -129,8 +167,8 @@ export default function AdicionarMembro(props) {
             <input placeholder="TikTok" class="input" name="InputTiktok" type="text" onChange={e=>setTiktok(e.target.value)}/>
 
             <input placeholder="Linkedin" class="input" name="InputLinkedin" type="text" onChange={e=>setLinkedin(e.target.value)}/>
-
-            <button className="continue-application" onClick={adicionarMembros}>
+            <div style={{display:'flex', flexDirection:'row', width:'35%', justifyContent:'space-between'}}>
+            <button className="continue-application" onClick={alterarMembros}>
             <div>
               <div className="pencil"></div>
               <div className="folder">
@@ -142,11 +180,27 @@ export default function AdicionarMembro(props) {
                 <div className="paper"></div>
               </div>
             </div>
-            Concluir
+            Alterar
           </button>
+          <button className="continue-application" onClick={excluirMembro} style={{backgroundColor:'#B91F1F'}}>
+            <div>
+              <div className="pencil" ></div>
+              <div className="folder" >
+                <div className="top" >
+                  <svg viewBox="0 0 24 27" >
+                    <path  d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"></path>
+                  </svg>
+                </div>
+                <div className="paper" ></div>
+              </div>
+            </div>
+            Excluir
+          </button>
+            </div>
+            
         </div>
       </div>
       <ToastContainer />
-    </div>
-  );
+        </div>
+    );
 }

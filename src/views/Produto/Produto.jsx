@@ -19,7 +19,7 @@ export default function Produto(props){
     const animationIntersection = new AnimationIntersection();
     useEffect( ()=>{
       
-        fetch(`${Keys.backEnd}/Produtos/${id}`)
+        fetch(`${Keys.backEnd}Produtos/${id}`)
             .then((responde)=>responde.json())
             .then((data)=> setProduto(data));
           

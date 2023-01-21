@@ -27,7 +27,7 @@ export default function RedefinirSenha(props){
         let resposta;
         let status;
         console.log(JSON.stringify(data))
-        let res = await fetch(`${Keys.backEnd}/UsuariosEsqueceuSenhaAlterarSenha/`, {
+        let res = await fetch(`${Keys.backEnd}UsuariosEsqueceuSenhaAlterarSenha/`, {
             method: 'PUT',
             mode: 'cors', 
             headers: {

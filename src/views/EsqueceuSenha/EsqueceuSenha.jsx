@@ -15,7 +15,7 @@ export default function EsqueceuSenha(props){
         }
         let resposta;
         let status;
-       const res = await fetch(`${Keys.backEnd}/EsqueceuSenha/${Email}`, {
+       const res = await fetch(`${Keys.backEnd}EsqueceuSenha/${Email}`, {
             method: 'POST',
             mode: 'cors', 
             cache: 'no-cache', 

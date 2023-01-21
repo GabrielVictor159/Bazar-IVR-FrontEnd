@@ -1,7 +1,11 @@
+// const Keys ={
+//     backEnd: "https://bazar-ivr-backend.azurewebsites.net/"
+// }
+
+// export default Keys;
+
 const Keys ={
-    backEnd: "https://bazar-ivr-backend.azurewebsites.net/"
+    backEnd: "http://localhost:3030/"
 }
 
 export default Keys;
-
-// backEnd: "https://bazar-ivr-backend.azurewebsites.net/"

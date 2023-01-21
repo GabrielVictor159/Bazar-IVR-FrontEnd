@@ -10,11 +10,14 @@ import AdminCompra from "./Compras/AdminCompra";
 import ImagesInstituto from "./ImagesInstituto/ImagesInstituto";
 import ImagesInstitutoAdicionar from "./ImagesInstituto/Adicionar/ImagesInstitutoAdicionar";
 import AdicionarMembro from "./Membros/Adicionar/AdicionarMembro";
+import Membros from "./Membros/Membros";
+import AlterarMembro from "./Membros/Alterar/AlterarMembro";
 export default function Admin(props){
     const [admin, setAdmin] = useState(false)
     const [estado, setEstado] = useState(1);
     const [selectedProduct, setSelectedProduto] = useState(false);
     const [selectedCompra, setSelectedCompra] = useState(false);
+    const [selectedMembro, setSelectedMembro] = useState(false)
     const mapEstado = ()=>{
      switch(estado){
             case 1:
@@ -33,8 +36,12 @@ export default function Admin(props){
                 return <ImagesInstituto admin={admin}/>
             case 9:
                 return <ImagesInstitutoAdicionar admin={admin}/>
+            case 10:
+                return <Membros setSelectedMembro={setSelectedMembro} admin={admin} setEstado={setEstado}/>
             case 11: 
                 return <AdicionarMembro setEstado={setEstado} admin={admin}/>
+            case 12:
+                return <AlterarMembro admin={admin} selectedMembro={selectedMembro} setEstado={setEstado}/>
 
         }
     }

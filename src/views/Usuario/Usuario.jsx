@@ -36,7 +36,8 @@ export default function Usuario(props) {
     document.body.style.background = "rgb(105, 105, 105)";
     fetch(`${Keys.backEnd}Compras/${usuario.Email}/${usuario.Senha}`)
       .then((response) => response.json())
-      .then((data) => setCompras(data));
+      .then((data) => setCompras(data))
+      .then((data)=>console.log(data))
   }, []);
 
  

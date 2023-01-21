@@ -1,0 +1,90 @@
+.Membro_box {
+    box-shadow: 15px 15px 0px rgba($color: #000000, $alpha: 0.4);
+    background-color: rgb(30, 30, 30);
+    position: relative;
+    transform: translateX(-50%);
+    overflow: visible;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .Membro_body {
+        background-color: rgba(255, 167, 243, 0.7);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: all 0.5s;
+
+        .Membro_bodyInformacoes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            transform: scale(1.2);
+            opacity: 0;
+            transition: all 0.5s;
+            z-index: 2;
+
+            h6 {
+                font-size: 27px;
+                font-weight: bold;
+            }
+
+            .Membro_containerTitulo {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+            }
+
+            .Membro_Titulo {
+                font-size: 23px;
+                font-weight: normal;
+                border: none;
+            }
+
+            .Membro_Descricao {
+                width: 70%;
+
+                font-size: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(30, 30, 30, 0.7);
+            }
+
+            .Membro_ContainerRedes {
+                display: flex;
+                flex-direction: row;
+                width: 70%;
+                justify-content: space-around;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+    &:hover {
+        .Membro_body {
+            opacity: 1;
+
+            .Membro_bodyInformacoes {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}

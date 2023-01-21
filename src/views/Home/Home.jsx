@@ -22,7 +22,7 @@ export default function Home(props) {
   const [CestaVisible, setCestaVisible] = useState(true);
   const [atualizar, setAtualizar] = useState(0);
   useLayoutEffect(() => {
-    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${index}/${size}`,{
+    fetch(`${Keys.backEnd}Produtos/FindAllLazyLoading/${index}/${size}`,{
       method:'GET',
       mode:'cors'
     })
