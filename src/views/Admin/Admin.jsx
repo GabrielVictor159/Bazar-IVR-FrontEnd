@@ -12,6 +12,8 @@ import ImagesInstitutoAdicionar from "./ImagesInstituto/Adicionar/ImagesInstitut
 import AdicionarMembro from "./Membros/Adicionar/AdicionarMembro";
 import Membros from "./Membros/Membros";
 import AlterarMembro from "./Membros/Alterar/AlterarMembro";
+import AdicionarFaqs from "./Faqs/Adicionar/AdicionarFaqs";
+import Faqs from "./Faqs/Faqs";
 export default function Admin(props){
     const [admin, setAdmin] = useState(false)
     const [estado, setEstado] = useState(1);
@@ -42,7 +44,10 @@ export default function Admin(props){
                 return <AdicionarMembro setEstado={setEstado} admin={admin}/>
             case 12:
                 return <AlterarMembro admin={admin} selectedMembro={selectedMembro} setEstado={setEstado}/>
-
+            case 13:
+                return <Faqs admin={admin} setEstado={setEstado} />
+            case 14:
+                return <AdicionarFaqs admin={admin} setEstado={setEstado}/>
         }
     }
     return(

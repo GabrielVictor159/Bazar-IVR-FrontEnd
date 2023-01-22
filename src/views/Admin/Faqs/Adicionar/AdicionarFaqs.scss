@@ -1,0 +1,37 @@
+$name: "AdicionarFaqs";
+
+.#{$name}_body{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 10vh;
+}
+.#{$name}_box{
+    min-width: 550px;
+    min-height: 600px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(7, 137, 160);
+    box-shadow: 15px 15px 0px rgba($color: #000000, $alpha: 0.6);
+    input{
+        width: 70%;
+        height: 50px;
+        border-radius: 10px;
+    }
+    textarea{
+        width: 70%;
+        height: 30%;
+        max-width: 90%;
+        max-height: 70%;
+        resize: both;
+        text-align: center;
+        border-radius: 10px;
+    }
+}

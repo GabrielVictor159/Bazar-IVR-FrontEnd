@@ -1,0 +1,58 @@
+$name: "FazerParte";
+
+.#{$name}_body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        left: 4%;
+        position: relative;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:900;
+        font-size: 50px;
+        font-style: italic;
+    }
+}
+.#{$name}_container_1{
+    width: 80%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    div{
+        width: 450px;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        position: absolute;
+        transform: translateY(-50px
+        );
+        left: 60%;
+        a{
+            width: 30%;
+            border-bottom: 2px solid rgb(0, 225, 255);
+        }
+    }
+    
+    
+}
+.#{$name}_container_2{
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    div{
+        width: 20%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}

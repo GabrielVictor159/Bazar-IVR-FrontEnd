@@ -1,0 +1,10 @@
+$name:"Faqs";
+
+.#{$name}_body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 15vh;
+}

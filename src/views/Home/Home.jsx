@@ -87,7 +87,7 @@ export default function Home(props) {
     const newIndex = index+ size
     setPage(pageN)
     setIndex(newIndex)
-    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${newIndex}/${size}`,{
+    fetch(`${Keys.backEnd}Produtos/FindAllLazyLoading/${newIndex}/${size}`,{
       method:'GET',
       mode:'cors'
     })
@@ -100,7 +100,7 @@ export default function Home(props) {
     const newBackIndex = index -size
     setPage(pageN)
     setIndex(newBackIndex)
-    fetch(`${Keys.backEnd}/Produtos/FindAllLazyLoading/${newBackIndex}/${size}`,{
+    fetch(`${Keys.backEnd}Produtos/FindAllLazyLoading/${newBackIndex}/${size}`,{
       method:'GET',
       mode:'cors'
     })

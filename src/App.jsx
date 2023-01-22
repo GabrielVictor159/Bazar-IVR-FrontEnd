@@ -16,6 +16,8 @@ import FinalizarCompra from './views/FinalizarCompra/FinalizarCompra';
 import Compra from './views/Compra/Compra';
 import AdminLogin from './views/Admin/AdminLogin';
 import Admin from './views/Admin/Admin';
+import FazerParte from './views/FazerParte/FazerParte';
+import Ajuda from './views/Ajuda/Ajuda';
 function App() {
   
  
@@ -37,6 +39,8 @@ function App() {
     <Route path='/FinalizarCompra/:id' element={<FinalizarCompra />}/>
     <Route path='/Compra/:id' element={<Compra />}/>
     <Route path='/admin' element={<Admin />}/>
+    <Route path='/Quero-fazer-parte' element={<FazerParte />}/>
+    <Route path='/Ajuda' element={<Ajuda />}/>
   </Routes>
   )
 }

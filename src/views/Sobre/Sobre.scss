@@ -1,0 +1,166 @@
+$name:"Sobre";
+
+.#{$name}_body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        left: 4%;
+        position: relative;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:900;
+        font-size: 50px;
+        font-style: italic;
+    }
+}
+
+.#{$name}_container_1{
+    width: 80%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    div{
+        width: 450px;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        position: absolute;
+        transform: translateY(-50px
+        );
+        left: 60%;
+        a{
+            width: 30%;
+            border-bottom: 2px solid rgb(0, 225, 255);
+        }
+    }
+    
+    
+}
+.#{$name}_container_2{
+    width: 80%;
+    height: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    div{
+        width: 30%;
+        h6{
+            font-size: 20px;
+            padding-bottom: 20px;
+            width: 110px;
+            border-bottom: 2px solid rgb(0, 225, 255);
+        }
+        p{
+            font-size: 0.7vw;
+        }
+    }
+}
+.#{$name}_container_3{
+    padding-bottom: 40px;
+    width: 70%;
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(4, 0px);
+    gap: 40px;
+    justify-content: space-around;
+}
+.#{$name}_imagesInstituto{
+    width: 430px;
+    height: 380px;
+    object-fit: cover;
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: scale(1) translate(-50%);
+    box-shadow: 15px 15px 0px rgba($color: #000000, $alpha: 0.6);
+}
+.#{$name}_imagesInstituto:hover{
+    background-color: rgba($color: #000000, $alpha: 1.0);
+    background-size: cover;
+    filter:saturate(0) brightness(0.7);
+    transform: scale(0.9) translate(-57%);
+    box-shadow: 8px 8px 0px rgba($color: #000000, $alpha: 0.6);
+}
+.#{$name}_imagesOverlay{
+    max-width: 40vw;
+    max-height: 40vw;
+}
+
+.#{$name}_imagesOverlay_nextPage{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    z-index: 15;
+    left: 90%;
+    opacity: 0.7;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../assets/icon_nextPage.png');
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: scale(1);
+}
+.#{$name}_imagesOverlay_nextPage:hover{
+    animation: nextButton 2s  ease-out 0s infinite normal forwards;
+    opacity: 1;
+    
+    @keyframes nextButton {
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.1);
+        }
+        100%{
+            transform: scale(1); 
+        }
+    }
+}
+.#{$name}_imagesOverlay_backPage{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    z-index: 15;
+    left: 5%;
+    opacity: 0.7;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../assets/icon_nextPage.png');
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: scale(-1);
+}
+.#{$name}_imagesOverlay_backPage:hover{
+    animation: backButton 2s  ease-out 0s infinite normal forwards;
+    opacity: 1;
+    
+    @keyframes backButton {
+        0%{
+            transform: scale(-1);
+        }
+        50%{
+            transform: scale(-1.1);
+        }
+        100%{
+            transform: scale(-1); 
+        }
+    }
+}
+.#{$name}_container_membros{
+    padding-bottom: 40px;
+    width: 80%;
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(3, 0px);
+    position: relative;
+    gap: 40px;
+    justify-content: space-around;
+
+}

@@ -5,16 +5,16 @@ export default function Overlay(props) {
         ?
     <div
       style={{
-        position: "absolute",
+        position: "fixed",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         top: 0,
         left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(10,10,10,0.6)",
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "rgba(10,10,10,0.8)",
         zIndex: 10,
       }}
     >

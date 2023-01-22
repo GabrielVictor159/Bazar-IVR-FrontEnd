@@ -114,7 +114,7 @@ const NavbarBazar = (props) =>{
           Sobre Nós
           </h3>
         </a >
-        <a className={props.active==='Quero'?'active':'inactive'} style={{textAlign:'center'}} href={'/Quero'}>
+        <a className={props.active==='Quero'?'active':'inactive'} style={{textAlign:'center'}} href={'/Quero-fazer-parte'}>
           <h3 >
           Quero Fazer Parte
           </h3>
