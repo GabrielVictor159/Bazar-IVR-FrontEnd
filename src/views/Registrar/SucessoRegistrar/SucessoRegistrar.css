@@ -1,6 +1,6 @@
 .SucessoRegistrarContainer{
     width: 518px;
-    height: 50%;
+    min-height: 50%;
     background-color: white;
     box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.3);
     display: flex;

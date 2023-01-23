@@ -53,7 +53,7 @@ export default function Usuario(props) {
       },
       {
         name: 'Usuario_Footer',
-        animationName: "leftSurge",
+        animationName: "bottomSurge",
       },
       {
         name: 'Usuario_table_Compras',
@@ -69,7 +69,7 @@ export default function Usuario(props) {
       a.push({
         name: `Usuario_item_informacao_${d}`,
         animationName: "topSurge",
-        animationPropertie:"2s ease-in-out 2s 1 normal forwards",
+        animationPropertie:"1s ease-in-out 1s 1 normal forwards",
       })
     })
     compras.map((value,index)=>{

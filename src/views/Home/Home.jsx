@@ -68,16 +68,16 @@ export default function Home(props) {
     }
     switch(id){
       case 'Home_Carousel_container':
-        a("leftSurge 2s ease-in-out 0s 1 normal forwards");
+        a("leftSurge 1s ease-in-out 0s 1 normal forwards");
         break;
       case "Home_Container_Produtos":
-        a("scale 2s ease-in-out 0s 1 normal forwards");
+        a("scale 1s ease-in-out 0s 1 normal forwards");
         break;
       case "Home_Nav":
-        a("topSurge 2s ease-in-out 0s 1 normal forwards");
+        a("topSurge 1s ease-in-out 0s 1 normal forwards");
         break;
       case "Home_Footer":
-        a("leftSurge 2s ease-in-out 0s 1 normal forwards");
+        a("bottomSurge 1s ease-in-out 0s 1 normal forwards");
         break;
     }
     
@@ -184,7 +184,7 @@ export default function Home(props) {
       <br />
       <br />
       <br />
-      <div la id={'Home_Container_Produtos'} className='containerProdutos'>
+      <div id={'Home_Container_Produtos'} className='containerProdutos'>
         {
            mapProdutos(produtos)
 

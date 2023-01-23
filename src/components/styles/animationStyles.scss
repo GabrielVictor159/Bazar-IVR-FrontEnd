@@ -53,4 +53,14 @@
     0% { width: 0 }
     100% { width: 100% }
   }
+  @keyframes rotate3d {
+    0%{
+        opacity: 0;
+        transform: rotate3d(0,-1,0,90deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate3d(0,0,0,90deg);
+    }
+  }
 

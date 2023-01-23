@@ -51,7 +51,7 @@ export default function Produto(props){
           },
           {
             name:"Produto_Footer",
-            animationName:"leftSurge"
+            animationName:"bottomSurge"
           },
         ]
         animationIntersection.oberseve(a)

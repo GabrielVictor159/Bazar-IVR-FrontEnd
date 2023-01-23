@@ -3,13 +3,7 @@ import Keys from "../../Keys";
 export default async function  Logar(Email, password, Lembrar){
     let resposta;
     let status;
-   const res = await fetch(`${Keys.backEnd}/Usuarios/${Email}/${password}`, {
-        method: 'GET',
-        cache: 'no-cache', 
-        credentials: 'same-origin', 
-       
-     
-      })
+   const res = await fetch(`${Keys.backEnd}Usuarios/${Email}/${password}`)
       resposta = (await res.text())
       status = res.status
       if(status === 200){
@@ -25,6 +19,7 @@ export default async function  Logar(Email, password, Lembrar){
       }
     }
     else{
+      console.log(res)
         return'Houve algum erro'
     }
 }

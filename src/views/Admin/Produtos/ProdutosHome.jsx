@@ -316,7 +316,7 @@ export default function ProdutosHome(props) {
                     style={{ cursor: "pointer" }}
                     width={25}
                     height={25}
-                    onDoubleClick={(e) => {setDeletar(true); setDeletarId(index)}}
+                    onClick={(e) => {setDeletar(true); setDeletarId(index)}}
                     src={deletea}
                   />
                 ) : alterar === index ? (

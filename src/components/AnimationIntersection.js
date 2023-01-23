@@ -45,7 +45,7 @@ export default class AnimationIntersection{
           document.getElementById(item.name).style.animation = properties;
         }
         if (item.animationPropertie === undefined) {
-          a(`${item.animationName} 2s ease-in-out 0s 1 normal forwards`);
+          a(`${item.animationName} 1s ease-in-out 0s 1 normal forwards`);
         }
         else {
           a(`${item.animationName} ${item.animationPropertie}`)

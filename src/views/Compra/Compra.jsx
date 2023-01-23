@@ -25,17 +25,17 @@ export default function Compra(props) {
       {
         name: 'Compra_Table_Compras',
         animationName: "bottomSurge",
-        animationPropertie:"2s ease-in-out 1s 1 normal forwards",
+        animationPropertie:"2s ease-in-out 0s 1 normal forwards",
       },
       {
         name: "Compra_Titulo_Container",
         animationName:"topSurge",
-        animationPropertie:"2s ease-in-out 1s 1 normal forwards",
+        animationPropertie:"2s ease-in-out 0s 1 normal forwards",
       },
       {
         name:"Compra_Texts_Container",
         animationName:"leftSurge",
-        animationPropertie:"2s ease-in-out 1s 1 normal forwards",
+        animationPropertie:"2s ease-in-out 0s 1 normal forwards",
       },
       {
         name:"Compra_Nav",
@@ -43,7 +43,7 @@ export default function Compra(props) {
       },
       {
         name:"Compra_Footer",
-        animationName:"leftSurge"
+        animationName:"bottomSurge"
       }
       
 ]

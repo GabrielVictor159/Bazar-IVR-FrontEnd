@@ -7,6 +7,7 @@ import bag from "../../assets/shoppingcart.png"
 import { useParams } from 'react-router-dom';
 import Foooter from '../../components/Foooter';
 import AnimationIntersection from '../../components/AnimationIntersection';
+import { ToastContainer, toast } from 'react-toastify';
 export default function FinalizarCompra() {
     const animationIntersection = new AnimationIntersection();
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -40,7 +41,7 @@ export default function FinalizarCompra() {
       }
     },[])
     function realizarPagamento() {
-
+        console.log(produto)
         let a = JSON.parse(localStorage.getItem('usuario'))
         if (a === null) {
             a = JSON.parse(sessionStorage.getItem('usuario'))
@@ -48,7 +49,7 @@ export default function FinalizarCompra() {
                 window.location = "/Login"
             }
         }
-        let b;
+        let b = [];
         if(produto===false){
         b = JSON.parse(localStorage.getItem('Cesta'))
         if (b === null) {
@@ -59,10 +60,11 @@ export default function FinalizarCompra() {
         }
     }
              else{
-         b = produto
+         b =produto
              }
 
         if (rua === '') {
+            toast("Por favor insira um endereço valido")
             return false
         }
         const Endereco = {
@@ -74,7 +76,7 @@ export default function FinalizarCompra() {
             estado: estado
         }
         try {
-            axios.post(`${Keys.backEnd}/RealizarPagamento`, {
+            axios.post(`${Keys.backEnd}RealizarPagamento`, {
                 Produtos: b,
                 Usuario: a,
                 Endereco: Endereco
@@ -117,7 +119,7 @@ export default function FinalizarCompra() {
             },
             {
                 name:"FinalizarCompra_Footer",
-                animationName:"leftSurge"
+                animationName:"bottomSurge"
             },
             {
                 name:"FinalizarCompra_button",
@@ -317,6 +319,7 @@ export default function FinalizarCompra() {
 
             <br /><br /><br /> <br /><br /><br />
             <Foooter id={"FinalizarCompra_Footer"}/>
+            <ToastContainer />
         </>
     );
 }

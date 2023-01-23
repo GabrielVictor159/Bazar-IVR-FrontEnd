@@ -9,7 +9,7 @@ import basket from '../assets/basket.png'
 import getUser from './getUser';
 const NavbarBazar = (props) =>{
   const usuario = getUser()
-  
+  const [inputBusca, setInputBusca] = useState(false);
   useEffect(()=>{
     console.log(usuario)
   },[])
@@ -103,6 +103,14 @@ const NavbarBazar = (props) =>{
     </nav>
     <nav className='nav3'>
         <div className='nav3Div' style={{flexDirection:'row', display:'flex'}}>
+          {
+            props.setBusca!==undefined && inputBusca
+            ?<input placeholder='Buscar Produtos'/>
+            :<></>
+          }
+          {
+            inputBusca===false?
+            <>
         <a className={props.active==='Home'?'active':'inactive'} style={{textAlign:'center'}} href={'/'}>
           <h3>
           Inicio
@@ -124,6 +132,9 @@ const NavbarBazar = (props) =>{
           Ajuda
           </h3>
         </a>
+        </>
+        :<></>
+        }
         </div>
     </nav>
     </div>

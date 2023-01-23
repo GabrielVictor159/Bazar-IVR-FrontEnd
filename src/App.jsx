@@ -18,6 +18,9 @@ import AdminLogin from './views/Admin/AdminLogin';
 import Admin from './views/Admin/Admin';
 import FazerParte from './views/FazerParte/FazerParte';
 import Ajuda from './views/Ajuda/Ajuda';
+import SucessoCompra from './views/SucessCompra/SucessCompra';
+import PagamentoPendente from './views/PagamentoPendente/PagamentoPendente';
+import FalhaPagamento from './views/FalhaPagamento/FalhaPagamento';
 function App() {
   
  
@@ -41,6 +44,9 @@ function App() {
     <Route path='/admin' element={<Admin />}/>
     <Route path='/Quero-fazer-parte' element={<FazerParte />}/>
     <Route path='/Ajuda' element={<Ajuda />}/>
+    <Route path='/SucessoCompra' element={<SucessoCompra />}/>
+    <Route path='/PagamentoPendente' element={<PagamentoPendente />}/>
+    <Route path='/FalhaPagamento' element={<FalhaPagamento />}/>
   </Routes>
   )
 }
