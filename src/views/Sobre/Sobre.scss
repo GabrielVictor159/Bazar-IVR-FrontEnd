@@ -16,7 +16,7 @@ $name:"Sobre";
 }
 
 .#{$name}_container_1{
-    width: 80%;
+    width: 100%;
     height: 350px;
     display: flex;
     flex-direction: row;
@@ -43,40 +43,48 @@ $name:"Sobre";
     
 }
 .#{$name}_container_2{
-    width: 80%;
+    width:90%;
     height: 1000px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    overflow-y: scroll;
+    overflow-x: hidden;
     div{
         width: 30%;
         h6{
-            font-size: 20px;
+            font-size: 1em;
             padding-bottom: 20px;
             width: 110px;
             border-bottom: 2px solid rgb(0, 225, 255);
         }
         p{
-            font-size: 0.7vw;
+            font-size: 0.7em;
         }
+        h1{
+            font-size: 2em!important;
+        }
+       
+    }
+    img{
+        width: 50em;
+        object-fit: contain;
     }
 }
 .#{$name}_container_3{
-    padding-bottom: 40px;
-    width: 70%;
-    display: grid;
-    flex-direction: row;
-    grid-template-columns: repeat(4, 0px);
-    gap: 40px;
-    justify-content: space-around;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .#{$name}_imagesInstituto{
-    width: 430px;
-    height: 380px;
+    width: 20em;
+    height: 20em;
     object-fit: cover;
     transition: all 0.5s;
     cursor: pointer;
-    transform: scale(1) translate(-50%);
     box-shadow: 15px 15px 0px rgba($color: #000000, $alpha: 0.6);
 }
 .#{$name}_imagesInstituto:hover{
@@ -164,3 +172,111 @@ $name:"Sobre";
     justify-content: space-around;
 
 }
+
+@media only screen and (min-width: 1200px ) {
+    .#{$name}_container_2{
+      
+        div{
+
+            h6{
+                font-size: 1em;
+               
+            }
+            p{
+                font-size: 1em;
+            }
+           
+        }
+        img{
+            width: 50em;
+   
+        }
+    }
+    .#{$name}_container_membros{
+      
+        grid-template-columns: repeat(3, 0px);
+       
+    
+    }
+}
+@media only screen and (min-width: 800px ) and (max-width:1100px) {
+    .#{$name}_container_2{
+      
+        div{
+
+            h6{
+                font-size: 1em;
+               
+            }
+            p{
+                font-size: 0.7em;
+            }
+           
+        }
+        img{
+            width: 35em;
+   
+        }
+    }
+    .#{$name}_container_membros{
+      
+        grid-template-columns: repeat(2, 0px);
+       
+    
+    }  
+   
+}
+@media only screen and (min-width: 500px ) and (max-width:800px) {
+    .#{$name}_container_2{
+      
+        div{
+
+            h6{
+                font-size: 0.7em;
+               
+            }
+            p{
+                font-size: 0.7em;
+            }
+           
+        }
+        img{
+            width: 30em;
+   
+        }
+    }
+    .#{$name}_container_membros{
+      
+        grid-template-columns: repeat(1, 0px);
+       
+    
+    }
+   
+}
+@media only screen and (max-width: 500px ) {
+    .#{$name}_container_2{
+      flex-direction: column;
+        div{
+            width: 100%;
+            h6{
+                font-size: 0.7em;
+               
+            }
+            p{
+                font-size: 0.7em;
+            }
+           
+        }
+        img{
+            width: 10em;
+   
+        }
+    }
+    .#{$name}_container_membros{
+      
+        grid-template-columns: repeat(1, 0px);
+       
+    
+    }
+}
+

@@ -77,7 +77,7 @@ export default function Sobre(props) {
     const mapImages = () => {
         try {
             return images.map((value, index) => {
-                return <img id={`${name}_imagesInstituto_${index}`} style={{left:-200, position:'relative', opacity:0}} className={`${name}_imagesInstituto`} src={value.LinkImage} onClick={() => { setIsFullscreen(true); setIndex(index) }} />
+                return <img id={`${name}_imagesInstituto_${index}`} style={{ position:'relative', opacity:0}} className={`${name}_imagesInstituto`} src={value.LinkImage} onClick={() => { setIsFullscreen(true); setIndex(index) }} />
             })
         }
         catch {
@@ -103,7 +103,7 @@ export default function Sobre(props) {
             return membros.map((value, index) => {
                 return (
                     <div style={{opacity:0}}  id={`${name}_imagesMembros_${index}`} key={`membro_${index}`}>
-                        <Membro Membro={value} width={500} height={500} />
+                        <Membro Membro={value} width={'20em'} height={'20em'} />
                     </div>
                 )
             })
