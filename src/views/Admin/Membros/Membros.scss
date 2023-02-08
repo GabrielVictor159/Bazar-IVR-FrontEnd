@@ -12,12 +12,17 @@ $name: "Membros";
 
     padding-bottom: 40px;
     width: 80%;
-    display: grid;
+    display: flex;
     flex-direction: row;
-    grid-template-columns: repeat(3, 0px);
     position: relative;
+    flex-wrap: wrap;
     gap: 40px;
     justify-content: space-around;
+    div{
+        transform: translateX(0);
+        position: relative;
+        left: 0!important;
+    }
 
      
     }

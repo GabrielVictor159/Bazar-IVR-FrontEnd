@@ -22,7 +22,7 @@ export default function Membros(props) {
         return membros.map((value, index) => {
             return (
                 <div Keys={`membro_${index}`} style={{cursor:'pointer'}} onClick={e=>setMembro(value)} >
-                <Membro Membro={value} width={500} height={500} />
+                <Membro Membro={value} width={'20em'} height={'20em'} />
                 </div>
             );
         })
